@@ -1,25 +1,31 @@
-"use client"
+"use client";
 
-import { useState, useEffect, type FormEvent } from "react"
-import { useRouter } from "next/navigation"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { Label } from "@/components/ui/label"
-import { Checkbox } from "@/components/ui/checkbox"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
-import { useToast } from "@/hooks/use-toast"
+import { useState, useEffect, type FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Label } from "@/components/ui/label";
+import { Checkbox } from "@/components/ui/checkbox";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { useToast } from "@/hooks/use-toast";
 
 // Extend window type for gtag
 declare global {
   interface Window {
-    gtag?: (...args: any[]) => void
+    gtag?: (...args: any[]) => void;
   }
 }
 
 interface QuoteFormProps {
-  logo?: string
-  cityName?: string
+  logo?: string;
+  cityName?: string;
 }
 
 const services = [
@@ -33,7 +39,7 @@ const services = [
   "LIGHTING and FIXTURES",
   "SMOKE DETECTORS",
   "OTHER",
-]
+];
 
 const spamKeywords = [
   "seo",
@@ -57,11 +63,11 @@ const spamKeywords = [
   "contact our team",
   "schedule a call",
   "free consultation",
-]
+];
 
 export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
-  const router = useRouter()
-  const { toast } = useToast()
+  const router = useRouter();
+  const { toast } = useToast();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -73,103 +79,103 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     referralSource: "",
     smsConsent: false,
     company: "", // Honeypot field
-  })
+  });
 
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formStartTime, setFormStartTime] = useState<number | null>(null)
-  const [formStarted, setFormStarted] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStartTime, setFormStartTime] = useState<number | null>(null);
+  const [formStarted, setFormStarted] = useState(false);
 
   // Track form start
   useEffect(() => {
     const handleBeforeUnload = () => {
       if (formStarted && !isSubmitting) {
-        const progress = calculateProgress()
+        const progress = calculateProgress();
         if (window.gtag) {
           window.gtag("event", "form_abandon", {
             form_name: "quote_request",
             progress_percentage: progress,
-          })
+          });
         }
       }
-    }
+    };
 
-    window.addEventListener("beforeunload", handleBeforeUnload)
-    return () => window.removeEventListener("beforeunload", handleBeforeUnload)
-  }, [formStarted, isSubmitting])
+    window.addEventListener("beforeunload", handleBeforeUnload);
+    return () => window.removeEventListener("beforeunload", handleBeforeUnload);
+  }, [formStarted, isSubmitting]);
 
   const handleFormStart = () => {
     if (!formStarted) {
-      setFormStarted(true)
-      setFormStartTime(Date.now())
+      setFormStarted(true);
+      setFormStartTime(Date.now());
       if (window.gtag) {
         window.gtag("event", "form_start", {
           form_name: "quote_request",
-        })
+        });
       }
     }
-  }
+  };
 
   const calculateProgress = () => {
-    let filled = 0
-    const required = 3 // fullName, email, message
-    if (formData.fullName.trim()) filled++
-    if (formData.email.trim()) filled++
-    if (formData.message.trim()) filled++
-    return Math.round((filled / required) * 100)
-  }
+    let filled = 0;
+    const required = 3; // fullName, email, message
+    if (formData.fullName.trim()) filled++;
+    if (formData.email.trim()) filled++;
+    if (formData.message.trim()) filled++;
+    return Math.round((filled / required) * 100);
+  };
 
   const handleServiceToggle = (service: string) => {
     const newServices = formData.services.includes(service)
       ? formData.services.filter((s) => s !== service)
-      : [...formData.services, service]
+      : [...formData.services, service];
 
-    setFormData({ ...formData, services: newServices })
+    setFormData({ ...formData, services: newServices });
 
     if (window.gtag) {
       window.gtag("event", "service_selected", {
         service_name: service,
         action: newServices.includes(service) ? "selected" : "deselected",
-      })
+      });
     }
-  }
+  };
 
   const handleReferralChange = (value: string) => {
-    setFormData({ ...formData, referralSource: value })
+    setFormData({ ...formData, referralSource: value });
     if (window.gtag) {
       window.gtag("event", "referral_source_selected", {
         source: value,
-      })
+      });
     }
-  }
+  };
 
   const validateEmail = (email: string) => {
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)
-  }
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
 
   const containsSpam = (text: string) => {
-    const lowerText = text.toLowerCase()
-    return spamKeywords.some((keyword) => lowerText.includes(keyword))
-  }
+    const lowerText = text.toLowerCase();
+    return spamKeywords.some((keyword) => lowerText.includes(keyword));
+  };
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
+    e.preventDefault();
 
     // Honeypot check
     if (formData.company) {
       // Silent rejection
-      return
+      return;
     }
 
     // Time-based validation
     if (formStartTime && Date.now() - formStartTime < 3000) {
       // Silent rejection - too fast
-      return
+      return;
     }
 
     // Spam keyword detection
     if (containsSpam(formData.message)) {
       // Silent rejection
-      return
+      return;
     }
 
     // Validation
@@ -178,8 +184,8 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         title: "Error",
         description: "Please enter your full name.",
         variant: "destructive",
-      })
-      return
+      });
+      return;
     }
 
     if (!formData.email.trim() || !validateEmail(formData.email)) {
@@ -187,8 +193,8 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         title: "Error",
         description: "Please enter a valid email address.",
         variant: "destructive",
-      })
-      return
+      });
+      return;
     }
 
     if (!formData.message.trim()) {
@@ -196,20 +202,23 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         title: "Error",
         description: "Please enter a message.",
         variant: "destructive",
-      })
-      return
+      });
+      return;
     }
 
-    if (formData.preferredCommunication === "Text message" && !formData.smsConsent) {
+    if (
+      formData.preferredCommunication === "Text message" &&
+      !formData.smsConsent
+    ) {
       toast({
         title: "Error",
         description: "Please consent to receive SMS messages.",
         variant: "destructive",
-      })
-      return
+      });
+      return;
     }
 
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     try {
       const payload = {
@@ -219,54 +228,63 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         timestamp: new Date().toISOString(),
         source_page: "Quote Form",
         city_name: cityName || "",
-      }
+      };
 
-      const netlifyFormData = new URLSearchParams()
-      netlifyFormData.append("form-name", "contact")
-      netlifyFormData.append("fullName", formData.fullName)
-      netlifyFormData.append("email", formData.email)
-      netlifyFormData.append("services", formData.services.join(", "))
-      netlifyFormData.append("phone", formData.phone)
-      netlifyFormData.append("message", formData.message)
-      netlifyFormData.append("preferredCommunication", formData.preferredCommunication)
-      netlifyFormData.append("referralSource", formData.referralSource)
-      netlifyFormData.append("smsConsent", formData.smsConsent ? "yes" : "no")
-      netlifyFormData.append("cityName", cityName || "")
-      netlifyFormData.append("timestamp", new Date().toISOString())
-      netlifyFormData.append("sourcePage", "Quote Form")
+      const netlifyFormData = new URLSearchParams();
+      netlifyFormData.append("form-name", "contact");
+      netlifyFormData.append("fullName", formData.fullName);
+      netlifyFormData.append("email", formData.email);
+      netlifyFormData.append("services", formData.services.join(", "));
+      netlifyFormData.append("phone", formData.phone);
+      netlifyFormData.append("message", formData.message);
+      netlifyFormData.append(
+        "preferredCommunication",
+        formData.preferredCommunication
+      );
+      netlifyFormData.append("referralSource", formData.referralSource);
+      netlifyFormData.append("smsConsent", formData.smsConsent ? "yes" : "no");
+      netlifyFormData.append("cityName", cityName || "");
+      netlifyFormData.append("timestamp", new Date().toISOString());
+      netlifyFormData.append("sourcePage", "Quote Form");
 
       const [netlifyResponse, makeResponse] = await Promise.all([
-        fetch("/", {
+        fetch("/__forms.html", {
           method: "POST",
           headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: netlifyFormData.toString(),
+          body: new URLSearchParams(netlifyFormData).toString(),
         }),
+        // fetch("/", {
+        //   method: "POST",
+        //   headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        //   body: netlifyFormData.toString(),
+        // }),
         fetch("https://hook.us2.make.com/h4hf3qm2o8auqbvxil2yzp5wue5xla2k", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         }),
-      ])
+      ]);
 
       if (!netlifyResponse.ok && !makeResponse.ok) {
-        throw new Error("Both submissions failed")
+        throw new Error("Both submissions failed");
       }
 
       // Track successful submission
       if (window.gtag) {
         window.gtag("event", "form_submit", {
           form_name: "quote_request",
-        })
+        });
         window.gtag("event", "generate_lead", {
           value: 500,
           currency: "USD",
-        })
+        });
       }
 
       toast({
         title: "Quote Request Sent!",
-        description: "We'll get back to you within 24 hours with your free quote.",
-      })
+        description:
+          "We'll get back to you within 24 hours with your free quote.",
+      });
 
       // Reset form
       setTimeout(() => {
@@ -280,30 +298,32 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
           referralSource: "",
           smsConsent: false,
           company: "",
-        })
-        setFormStarted(false)
-        setFormStartTime(null)
-        router.push("/thankyou")
-      }, 2000)
+        });
+        setFormStarted(false);
+        setFormStartTime(null);
+        router.push("/thankyou");
+      }, 2000);
     } catch (error) {
       toast({
         title: "Error",
-        description: "Failed to send quote request. Please try again or contact us directly.",
+        description:
+          "Failed to send quote request. Please try again or contact us directly.",
         variant: "destructive",
-      })
+      });
     } finally {
-      setIsSubmitting(false)
+      setIsSubmitting(false);
     }
-  }
+  };
 
   return (
     <>
       <form
         name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        style={{ display: "none" }}
+        // method="POST"
+        onSubmit={handleSubmit}
+        // data-netlify="true"
+        // data-netlify-honeypot="bot-field"
+        // style={{ display: "none" }}
       >
         <input type="hidden" name="form-name" value="contact" />
         <input name="bot-field" />
@@ -325,18 +345,25 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         style={{
           background: "rgba(0, 0, 0, 0.85)",
           border: "1px solid rgba(255,255,255,0.08)",
-          boxShadow: "0 8px 32px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(255,255,255,0.08)",
+          boxShadow:
+            "0 8px 32px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(255,255,255,0.08)",
         }}
         onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = "0 8px 32px rgba(220, 38, 38, 0.65), 0 0 0 1px rgba(255,255,255,0.08)"
+          e.currentTarget.style.boxShadow =
+            "0 8px 32px rgba(220, 38, 38, 0.65), 0 0 0 1px rgba(255,255,255,0.08)";
         }}
         onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = "0 8px 32px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(255,255,255,0.08)"
+          e.currentTarget.style.boxShadow =
+            "0 8px 32px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(255,255,255,0.08)";
         }}
       >
         <div className="text-center mb-6 pb-6 border-b border-white/10">
-          <h3 className="text-[#22c55e] text-xl font-bold mb-2">Easy Quote Request</h3>
-          <p className="text-white font-bold text-lg">5-Star Reviews ⭐ on Google & Yelp</p>
+          <h3 className="text-[#22c55e] text-xl font-bold mb-2">
+            Easy Quote Request
+          </h3>
+          <p className="text-white font-bold text-lg">
+            5-Star Reviews ⭐ on Google & Yelp
+          </p>
         </div>
 
         <form
@@ -361,7 +388,9 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
             type="text"
             name="company"
             value={formData.company}
-            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, company: e.target.value })
+            }
             style={{ display: "none" }}
             tabIndex={-1}
             autoComplete="off"
@@ -377,7 +406,9 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
                 name="fullName"
                 type="text"
                 value={formData.fullName}
-                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, fullName: e.target.value })
+                }
                 onFocus={handleFormStart}
                 placeholder="Full Name"
                 className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
@@ -394,7 +425,9 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
                 name="email"
                 type="email"
                 value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                onChange={(e) =>
+                  setFormData({ ...formData, email: e.target.value })
+                }
                 onFocus={handleFormStart}
                 placeholder="Email"
                 className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
@@ -404,27 +437,37 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
           </div>
 
           <div>
-            <Label className="text-white mb-3 block">What service are you looking for?</Label>
-            <input type="hidden" name="services" value={formData.services.join(", ")} />
+            <Label className="text-white mb-3 block">
+              What service are you looking for?
+            </Label>
+            <input
+              type="hidden"
+              name="services"
+              value={formData.services.join(", ")}
+            />
             <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
               {services.map((service) => (
                 <label
                   key={service}
                   className="flex items-center gap-2 p-3 rounded-lg cursor-pointer transition-all"
                   style={{
-                    background: formData.services.includes(service) ? "rgba(30, 41, 59, 0.8)" : "rgba(30, 41, 59, 0.6)",
+                    background: formData.services.includes(service)
+                      ? "rgba(30, 41, 59, 0.8)"
+                      : "rgba(30, 41, 59, 0.6)",
                     border: formData.services.includes(service)
                       ? "2px solid #22c55e"
                       : "1px solid rgba(71, 85, 105, 0.5)",
                   }}
                   onMouseEnter={(e) => {
                     if (!formData.services.includes(service)) {
-                      e.currentTarget.style.background = "rgba(30, 41, 59, 0.9)"
+                      e.currentTarget.style.background =
+                        "rgba(30, 41, 59, 0.9)";
                     }
                   }}
                   onMouseLeave={(e) => {
                     if (!formData.services.includes(service)) {
-                      e.currentTarget.style.background = "rgba(30, 41, 59, 0.6)"
+                      e.currentTarget.style.background =
+                        "rgba(30, 41, 59, 0.6)";
                     }
                   }}
                 >
@@ -448,7 +491,9 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
               name="phone"
               type="tel"
               value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, phone: e.target.value })
+              }
               onFocus={handleFormStart}
               placeholder="+1 201-555-0123"
               className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
@@ -464,7 +509,9 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
               id="message"
               name="message"
               value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, message: e.target.value })
+              }
               onFocus={handleFormStart}
               placeholder="Tell us about your project..."
               className="bg-white text-black border-[#e5e5e5] rounded-lg min-h-[120px] text-base resize-none"
@@ -472,13 +519,22 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
           </div>
 
           <div>
-            <Label htmlFor="preferredCommunication" className="text-white mb-2 block">
+            <Label
+              htmlFor="preferredCommunication"
+              className="text-white mb-2 block"
+            >
               Preferred way of communication
             </Label>
-            <input type="hidden" name="preferredCommunication" value={formData.preferredCommunication} />
+            <input
+              type="hidden"
+              name="preferredCommunication"
+              value={formData.preferredCommunication}
+            />
             <Select
               value={formData.preferredCommunication}
-              onValueChange={(value) => setFormData({ ...formData, preferredCommunication: value })}
+              onValueChange={(value) =>
+                setFormData({ ...formData, preferredCommunication: value })
+              }
             >
               <SelectTrigger className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base">
                 <SelectValue placeholder="optional" />
@@ -495,8 +551,15 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
             <Label htmlFor="referralSource" className="text-white mb-2 block">
               How did you hear about us?
             </Label>
-            <input type="hidden" name="referralSource" value={formData.referralSource} />
-            <Select value={formData.referralSource} onValueChange={handleReferralChange}>
+            <input
+              type="hidden"
+              name="referralSource"
+              value={formData.referralSource}
+            />
+            <Select
+              value={formData.referralSource}
+              onValueChange={handleReferralChange}
+            >
               <SelectTrigger className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base">
                 <SelectValue placeholder="optional" />
               </SelectTrigger>
@@ -512,25 +575,41 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
           </div>
 
           <div className="flex items-start gap-2">
-            <input type="hidden" name="smsConsent" value={formData.smsConsent ? "yes" : "no"} />
+            <input
+              type="hidden"
+              name="smsConsent"
+              value={formData.smsConsent ? "yes" : "no"}
+            />
             <Checkbox
               id="smsConsent"
               checked={formData.smsConsent}
-              onCheckedChange={(checked) => setFormData({ ...formData, smsConsent: checked as boolean })}
+              onCheckedChange={(checked) =>
+                setFormData({ ...formData, smsConsent: checked as boolean })
+              }
               className="mt-1 border-white data-[state=checked]:bg-[#22c55e] data-[state=checked]:border-[#22c55e]"
             />
-            <Label htmlFor="smsConsent" className="text-white text-sm leading-relaxed cursor-pointer">
-              By checking this box you agree to receive SMS from ABR Electric. Reply Stop to opt out from text messages
-              at any time
+            <Label
+              htmlFor="smsConsent"
+              className="text-white text-sm leading-relaxed cursor-pointer"
+            >
+              By checking this box you agree to receive SMS from ABR Electric.
+              Reply Stop to opt out from text messages at any time
             </Label>
           </div>
 
           <input type="hidden" name="cityName" value={cityName || ""} />
-          <input type="hidden" name="timestamp" value={new Date().toISOString()} />
+          <input
+            type="hidden"
+            name="timestamp"
+            value={new Date().toISOString()}
+          />
           <input type="hidden" name="sourcePage" value="Quote Form" />
 
           <div className="text-center text-xs text-[#a3a3a3] mb-4">
-            <a href="/privacy_policy" className="hover:text-white transition-colors">
+            <a
+              href="/privacy_policy"
+              className="hover:text-white transition-colors"
+            >
               our privacy policy
             </a>
           </div>
@@ -548,5 +627,5 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         </form>
       </div>
     </>
-  )
+  );
 }

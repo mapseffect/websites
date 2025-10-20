@@ -5,6 +5,10 @@
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
+[[edge_functions]]
+  function = "nextFormsHandler"
+  path = "/*"
+  
 [build.environment]
   NODE_VERSION = "20"
 
