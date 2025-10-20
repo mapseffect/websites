@@ -24,7 +24,7 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <div className="border-[3px] border-[#F5F5DC] rounded-lg p-6 max-w-xl mb-10">
+            <div className="hidden md:block border-[3px] border-[#F5F5DC] rounded-lg p-6 max-w-xl mb-10">
               <p className="text-white text-center text-lg leading-relaxed">
                 We live by a simple yet powerful motto:
                 <br />
@@ -32,7 +32,7 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <div className="flex items-center justify-start gap-6 max-w-xl mt-10 mb-10">
+            <div className="hidden md:flex items-center justify-start gap-6 max-w-xl mt-10 mb-10">
               <img
                 src="https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/781dc659-56b3-4b47-4c68-b9b7c07d8c00/public"
                 alt="ABR Electric Service Van"
