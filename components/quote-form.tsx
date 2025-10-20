@@ -221,35 +221,14 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         city_name: cityName || "",
       }
 
-      const netlifyFormData = new URLSearchParams()
-      netlifyFormData.append("form-name", "contact")
-      netlifyFormData.append("fullName", formData.fullName)
-      netlifyFormData.append("email", formData.email)
-      netlifyFormData.append("services", formData.services.join(", "))
-      netlifyFormData.append("phone", formData.phone)
-      netlifyFormData.append("message", formData.message)
-      netlifyFormData.append("preferredCommunication", formData.preferredCommunication)
-      netlifyFormData.append("referralSource", formData.referralSource)
-      netlifyFormData.append("smsConsent", formData.smsConsent ? "yes" : "no")
-      netlifyFormData.append("cityName", cityName || "")
-      netlifyFormData.append("timestamp", new Date().toISOString())
-      netlifyFormData.append("sourcePage", "Quote Form")
+      const makeResponse = await fetch("https://hook.us2.make.com/h4hf3qm2o8auqbvxil2yzp5wue5xla2k", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      })
 
-      const [netlifyResponse, makeResponse] = await Promise.all([
-        fetch("/", {
-          method: "POST",
-          headers: { "Content-Type": "application/x-www-form-urlencoded" },
-          body: netlifyFormData.toString(),
-        }),
-        fetch("https://hook.us2.make.com/h4hf3qm2o8auqbvxil2yzp5wue5xla2k", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        }),
-      ])
-
-      if (!netlifyResponse.ok && !makeResponse.ok) {
-        throw new Error("Both submissions failed")
+      if (!makeResponse.ok) {
+        throw new Error("Submission failed")
       }
 
       // Track successful submission
@@ -297,256 +276,207 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
   }
 
   return (
-    <>
-      <form
-        name="contact"
-        method="POST"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        style={{ display: "none" }}
-      >
-        <input type="hidden" name="form-name" value="contact" />
-        <input name="bot-field" />
-        <input name="fullName" />
-        <input name="email" />
-        <input name="services" />
-        <input name="phone" />
-        <textarea name="message" />
-        <input name="preferredCommunication" />
-        <input name="referralSource" />
-        <input name="smsConsent" />
-        <input name="cityName" />
-        <input name="timestamp" />
-        <input name="sourcePage" />
-      </form>
+    <div
+      className="relative rounded-2xl p-8 shadow-2xl"
+      style={{
+        background: "rgba(0, 0, 0, 0.85)",
+        border: "1px solid rgba(255,255,255,0.08)",
+        boxShadow: "0 8px 32px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(255,255,255,0.08)",
+      }}
+      onMouseEnter={(e) => {
+        e.currentTarget.style.boxShadow = "0 8px 32px rgba(220, 38, 38, 0.65), 0 0 0 1px rgba(255,255,255,0.08)"
+      }}
+      onMouseLeave={(e) => {
+        e.currentTarget.style.boxShadow = "0 8px 32px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(255,255,255,0.08)"
+      }}
+    >
+      <div className="text-center mb-6 pb-6 border-b border-white/10">
+        <h3 className="text-[#22c55e] text-xl font-bold mb-2">Easy Quote Request</h3>
+        <p className="text-white font-bold text-lg">5-Star Reviews ⭐ on Google & Yelp</p>
+      </div>
 
-      <div
-        className="relative rounded-2xl p-8 shadow-2xl"
-        style={{
-          background: "rgba(0, 0, 0, 0.85)",
-          border: "1px solid rgba(255,255,255,0.08)",
-          boxShadow: "0 8px 32px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(255,255,255,0.08)",
-        }}
-        onMouseEnter={(e) => {
-          e.currentTarget.style.boxShadow = "0 8px 32px rgba(220, 38, 38, 0.65), 0 0 0 1px rgba(255,255,255,0.08)"
-        }}
-        onMouseLeave={(e) => {
-          e.currentTarget.style.boxShadow = "0 8px 32px rgba(220, 38, 38, 0.2), 0 0 0 1px rgba(255,255,255,0.08)"
-        }}
-      >
-        <div className="text-center mb-6 pb-6 border-b border-white/10">
-          <h3 className="text-[#22c55e] text-xl font-bold mb-2">Easy Quote Request</h3>
-          <p className="text-white font-bold text-lg">5-Star Reviews ⭐ on Google & Yelp</p>
-        </div>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <input
+          type="text"
+          name="company"
+          value={formData.company}
+          onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+          style={{ display: "none" }}
+          tabIndex={-1}
+          autoComplete="off"
+        />
 
-        <form
-          name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          onSubmit={handleSubmit}
-          className="space-y-4"
-        >
-          <input type="hidden" name="form-name" value="contact" />
-
-          {/* Honeypot field for Netlify */}
-          <p style={{ display: "none" }}>
-            <label>
-              Don't fill this out if you're human: <input name="bot-field" />
-            </label>
-          </p>
-
-          {/* Honeypot field */}
-          <input
-            type="text"
-            name="company"
-            value={formData.company}
-            onChange={(e) => setFormData({ ...formData, company: e.target.value })}
-            style={{ display: "none" }}
-            tabIndex={-1}
-            autoComplete="off"
-          />
-
-          <div className="grid md:grid-cols-2 gap-4">
-            <div>
-              <Label htmlFor="fullName" className="text-white mb-2 block">
-                Full Name <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                id="fullName"
-                name="fullName"
-                type="text"
-                value={formData.fullName}
-                onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
-                onFocus={handleFormStart}
-                placeholder="Full Name"
-                className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
-                autoComplete="name"
-              />
-            </div>
-
-            <div>
-              <Label htmlFor="email" className="text-white mb-2 block">
-                Email <span className="text-red-500">*</span>
-              </Label>
-              <Input
-                id="email"
-                name="email"
-                type="email"
-                value={formData.email}
-                onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                onFocus={handleFormStart}
-                placeholder="Email"
-                className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
-                autoComplete="email"
-              />
-            </div>
-          </div>
-
+        <div className="grid md:grid-cols-2 gap-4">
           <div>
-            <Label className="text-white mb-3 block">What service are you looking for?</Label>
-            <input type="hidden" name="services" value={formData.services.join(", ")} />
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
-              {services.map((service) => (
-                <label
-                  key={service}
-                  className="flex items-center gap-2 p-3 rounded-lg cursor-pointer transition-all"
-                  style={{
-                    background: formData.services.includes(service) ? "rgba(30, 41, 59, 0.8)" : "rgba(30, 41, 59, 0.6)",
-                    border: formData.services.includes(service)
-                      ? "2px solid #22c55e"
-                      : "1px solid rgba(71, 85, 105, 0.5)",
-                  }}
-                  onMouseEnter={(e) => {
-                    if (!formData.services.includes(service)) {
-                      e.currentTarget.style.background = "rgba(30, 41, 59, 0.9)"
-                    }
-                  }}
-                  onMouseLeave={(e) => {
-                    if (!formData.services.includes(service)) {
-                      e.currentTarget.style.background = "rgba(30, 41, 59, 0.6)"
-                    }
-                  }}
-                >
-                  <Checkbox
-                    checked={formData.services.includes(service)}
-                    onCheckedChange={() => handleServiceToggle(service)}
-                    className="border-white data-[state=checked]:bg-[#22c55e] data-[state=checked]:border-[#22c55e]"
-                  />
-                  <span className="text-white text-sm">{service}</span>
-                </label>
-              ))}
-            </div>
-          </div>
-
-          <div>
-            <Label htmlFor="phone" className="text-white mb-2 block">
-              Phone
+            <Label htmlFor="fullName" className="text-white mb-2 block">
+              Full Name <span className="text-red-500">*</span>
             </Label>
             <Input
-              id="phone"
-              name="phone"
-              type="tel"
-              value={formData.phone}
-              onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+              id="fullName"
+              name="fullName"
+              type="text"
+              value={formData.fullName}
+              onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
               onFocus={handleFormStart}
-              placeholder="+1 201-555-0123"
+              placeholder="Full Name"
               className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
-              autoComplete="tel"
+              autoComplete="name"
             />
           </div>
 
           <div>
-            <Label htmlFor="message" className="text-white mb-2 block">
-              Message <span className="text-red-500">*</span>
+            <Label htmlFor="email" className="text-white mb-2 block">
+              Email <span className="text-red-500">*</span>
             </Label>
-            <Textarea
-              id="message"
-              name="message"
-              value={formData.message}
-              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            <Input
+              id="email"
+              name="email"
+              type="email"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               onFocus={handleFormStart}
-              placeholder="Tell us about your project..."
-              className="bg-white text-black border-[#e5e5e5] rounded-lg min-h-[120px] text-base resize-none"
+              placeholder="Email"
+              className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
+              autoComplete="email"
             />
           </div>
+        </div>
 
-          <div>
-            <Label htmlFor="preferredCommunication" className="text-white mb-2 block">
-              Preferred way of communication
-            </Label>
-            <input type="hidden" name="preferredCommunication" value={formData.preferredCommunication} />
-            <Select
-              value={formData.preferredCommunication}
-              onValueChange={(value) => setFormData({ ...formData, preferredCommunication: value })}
-            >
-              <SelectTrigger className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base">
-                <SelectValue placeholder="optional" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Email">Email</SelectItem>
-                <SelectItem value="Phone call">Phone call</SelectItem>
-                <SelectItem value="Text message">Text message</SelectItem>
-              </SelectContent>
-            </Select>
+        <div>
+          <Label className="text-white mb-3 block">What service are you looking for?</Label>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
+            {services.map((service) => (
+              <label
+                key={service}
+                className="flex items-center gap-2 p-3 rounded-lg cursor-pointer transition-all"
+                style={{
+                  background: formData.services.includes(service) ? "rgba(30, 41, 59, 0.8)" : "rgba(30, 41, 59, 0.6)",
+                  border: formData.services.includes(service)
+                    ? "2px solid #22c55e"
+                    : "1px solid rgba(71, 85, 105, 0.5)",
+                }}
+                onMouseEnter={(e) => {
+                  if (!formData.services.includes(service)) {
+                    e.currentTarget.style.background = "rgba(30, 41, 59, 0.9)"
+                  }
+                }}
+                onMouseLeave={(e) => {
+                  if (!formData.services.includes(service)) {
+                    e.currentTarget.style.background = "rgba(30, 41, 59, 0.6)"
+                  }
+                }}
+              >
+                <Checkbox
+                  checked={formData.services.includes(service)}
+                  onCheckedChange={() => handleServiceToggle(service)}
+                  className="border-white data-[state=checked]:bg-[#22c55e] data-[state=checked]:border-[#22c55e]"
+                />
+                <span className="text-white text-sm">{service}</span>
+              </label>
+            ))}
           </div>
+        </div>
 
-          <div>
-            <Label htmlFor="referralSource" className="text-white mb-2 block">
-              How did you hear about us?
-            </Label>
-            <input type="hidden" name="referralSource" value={formData.referralSource} />
-            <Select value={formData.referralSource} onValueChange={handleReferralChange}>
-              <SelectTrigger className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base">
-                <SelectValue placeholder="optional" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="Google">Google</SelectItem>
-                <SelectItem value="Yelp">Yelp</SelectItem>
-                <SelectItem value="Facebook">Facebook</SelectItem>
-                <SelectItem value="Nextdoor">Nextdoor</SelectItem>
-                <SelectItem value="Referral">Referral</SelectItem>
-                <SelectItem value="Other">Other</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
+        <div>
+          <Label htmlFor="phone" className="text-white mb-2 block">
+            Phone
+          </Label>
+          <Input
+            id="phone"
+            name="phone"
+            type="tel"
+            value={formData.phone}
+            onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+            onFocus={handleFormStart}
+            placeholder="+1 201-555-0123"
+            className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
+            autoComplete="tel"
+          />
+        </div>
 
-          <div className="flex items-start gap-2">
-            <input type="hidden" name="smsConsent" value={formData.smsConsent ? "yes" : "no"} />
-            <Checkbox
-              id="smsConsent"
-              checked={formData.smsConsent}
-              onCheckedChange={(checked) => setFormData({ ...formData, smsConsent: checked as boolean })}
-              className="mt-1 border-white data-[state=checked]:bg-[#22c55e] data-[state=checked]:border-[#22c55e]"
-            />
-            <Label htmlFor="smsConsent" className="text-white text-sm leading-relaxed cursor-pointer">
-              By checking this box you agree to receive SMS from ABR Electric. Reply Stop to opt out from text messages
-              at any time
-            </Label>
-          </div>
+        <div>
+          <Label htmlFor="message" className="text-white mb-2 block">
+            Message <span className="text-red-500">*</span>
+          </Label>
+          <Textarea
+            id="message"
+            name="message"
+            value={formData.message}
+            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+            onFocus={handleFormStart}
+            placeholder="Tell us about your project..."
+            className="bg-white text-black border-[#e5e5e5] rounded-lg min-h-[120px] text-base resize-none"
+          />
+        </div>
 
-          <input type="hidden" name="cityName" value={cityName || ""} />
-          <input type="hidden" name="timestamp" value={new Date().toISOString()} />
-          <input type="hidden" name="sourcePage" value="Quote Form" />
-
-          <div className="text-center text-xs text-[#a3a3a3] mb-4">
-            <a href="/privacy_policy" className="hover:text-white transition-colors">
-              our privacy policy
-            </a>
-          </div>
-
-          <Button
-            type="submit"
-            disabled={isSubmitting}
-            className="mx-auto block w-[70%] bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-base h-12 rounded-xl shadow-lg disabled:bg-[#6b7280]"
-            style={{
-              boxShadow: "0 4px 14px rgba(34, 197, 94, 0.35)",
-            }}
+        <div>
+          <Label htmlFor="preferredCommunication" className="text-white mb-2 block">
+            Preferred way of communication
+          </Label>
+          <Select
+            value={formData.preferredCommunication}
+            onValueChange={(value) => setFormData({ ...formData, preferredCommunication: value })}
           >
-            {isSubmitting ? "Sending..." : '👉 "Get My Free Quote"'}
-          </Button>
-        </form>
-      </div>
-    </>
+            <SelectTrigger className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base">
+              <SelectValue placeholder="optional" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Email">Email</SelectItem>
+              <SelectItem value="Phone call">Phone call</SelectItem>
+              <SelectItem value="Text message">Text message</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div>
+          <Label htmlFor="referralSource" className="text-white mb-2 block">
+            How did you hear about us?
+          </Label>
+          <Select value={formData.referralSource} onValueChange={handleReferralChange}>
+            <SelectTrigger className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base">
+              <SelectValue placeholder="optional" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectItem value="Google">Google</SelectItem>
+              <SelectItem value="Yelp">Yelp</SelectItem>
+              <SelectItem value="Facebook">Facebook</SelectItem>
+              <SelectItem value="Nextdoor">Nextdoor</SelectItem>
+              <SelectItem value="Referral">Referral</SelectItem>
+              <SelectItem value="Other">Other</SelectItem>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div className="flex items-start gap-2">
+          <Checkbox
+            id="smsConsent"
+            checked={formData.smsConsent}
+            onCheckedChange={(checked) => setFormData({ ...formData, smsConsent: checked as boolean })}
+            className="mt-1 border-white data-[state=checked]:bg-[#22c55e] data-[state=checked]:border-[#22c55e]"
+          />
+          <Label htmlFor="smsConsent" className="text-white text-sm leading-relaxed cursor-pointer">
+            By checking this box you agree to receive SMS from ABR Electric. Reply Stop to opt out from text messages at
+            any time
+          </Label>
+        </div>
+
+        <div className="text-center text-xs text-[#a3a3a3] mb-4">
+          <a href="/privacy_policy" className="hover:text-white transition-colors">
+            our privacy policy
+          </a>
+        </div>
+
+        <Button
+          type="submit"
+          disabled={isSubmitting}
+          className="mx-auto block w-[70%] bg-[#22c55e] hover:bg-[#16a34a] text-white font-bold text-base h-12 rounded-xl shadow-lg disabled:bg-[#6b7280]"
+          style={{
+            boxShadow: "0 4px 14px rgba(34, 197, 94, 0.35)",
+          }}
+        >
+          {isSubmitting ? "Sending..." : '👉 "Get My Free Quote"'}
+        </Button>
+      </form>
+    </div>
   )
 }
