@@ -221,36 +221,16 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         city_name: cityName || "",
       }
 
-      const [makeResponse, resendResponse] = await Promise.all([
-        // Make.com webhook
-        fetch("https://hook.us2.make.com/h4hf3qm2o8auqbvxil2yzp5wue5xla2k", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify(payload),
-        }),
-        // Resend API
-        fetch("/api/contact", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            fullName: formData.fullName,
-            email: formData.email,
-            services: formData.services,
-            phone: formData.phone,
-            message: formData.message,
-            preferredCommunication: formData.preferredCommunication,
-            referralSource: formData.referralSource,
-            smsConsent: formData.smsConsent,
-          }),
-        }),
-      ])
+      const makeResponse = await fetch("https://hook.us2.make.com/h4hf3qm2o8auqbvxil2yzp5wue5xla2k", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
 
-      if (!makeResponse.ok && !resendResponse.ok) {
-        throw new Error("Both submissions failed")
+      if (!makeResponse.ok) {
+        throw new Error("Submission failed")
       }
 
       // Track successful submission
@@ -317,7 +297,23 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         <p className="text-white font-bold text-lg">5-Star Reviews ⭐ on Google & Yelp</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form
+        name="contact"
+        method="POST"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
+        onSubmit={handleSubmit}
+        className="space-y-4"
+      >
+        <input type="hidden" name="form-name" value="contact" />
+
+        {/* Honeypot field for Netlify */}
+        <p style={{ display: "none" }}>
+          <label>
+            Don't fill this out if you're human: <input name="bot-field" />
+          </label>
+        </p>
+
         {/* Honeypot field */}
         <input
           type="text"
@@ -336,6 +332,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
             </Label>
             <Input
               id="fullName"
+              name="fullName"
               type="text"
               value={formData.fullName}
               onChange={(e) => setFormData({ ...formData, fullName: e.target.value })}
@@ -352,6 +349,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
             </Label>
             <Input
               id="email"
+              name="email"
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -365,6 +363,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
 
         <div>
           <Label className="text-white mb-3 block">What service are you looking for?</Label>
+          <input type="hidden" name="services" value={formData.services.join(", ")} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-2">
             {services.map((service) => (
               <label
@@ -404,6 +403,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
           </Label>
           <Input
             id="phone"
+            name="phone"
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -420,6 +420,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
           </Label>
           <Textarea
             id="message"
+            name="message"
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             onFocus={handleFormStart}
@@ -432,6 +433,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
           <Label htmlFor="preferredCommunication" className="text-white mb-2 block">
             Preferred way of communication
           </Label>
+          <input type="hidden" name="preferredCommunication" value={formData.preferredCommunication} />
           <Select
             value={formData.preferredCommunication}
             onValueChange={(value) => setFormData({ ...formData, preferredCommunication: value })}
@@ -451,6 +453,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
           <Label htmlFor="referralSource" className="text-white mb-2 block">
             How did you hear about us?
           </Label>
+          <input type="hidden" name="referralSource" value={formData.referralSource} />
           <Select value={formData.referralSource} onValueChange={handleReferralChange}>
             <SelectTrigger className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base">
               <SelectValue placeholder="optional" />
@@ -467,6 +470,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         </div>
 
         <div className="flex items-start gap-2">
+          <input type="hidden" name="smsConsent" value={formData.smsConsent ? "yes" : "no"} />
           <Checkbox
             id="smsConsent"
             checked={formData.smsConsent}
@@ -478,6 +482,10 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
             any time
           </Label>
         </div>
+
+        <input type="hidden" name="cityName" value={cityName || ""} />
+        <input type="hidden" name="timestamp" value={new Date().toISOString()} />
+        <input type="hidden" name="sourcePage" value="Quote Form" />
 
         <div className="text-center text-xs text-[#a3a3a3] mb-4">
           <a href="/privacy_policy" className="hover:text-white transition-colors">
