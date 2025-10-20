@@ -221,16 +221,35 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         city_name: cityName || "",
       }
 
-      const makeResponse = await fetch("https://hook.us2.make.com/h4hf3qm2o8auqbvxil2yzp5wue5xla2k", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(payload),
-      })
+      const netlifyFormData = new URLSearchParams()
+      netlifyFormData.append("form-name", "contact")
+      netlifyFormData.append("fullName", formData.fullName)
+      netlifyFormData.append("email", formData.email)
+      netlifyFormData.append("services", formData.services.join(", "))
+      netlifyFormData.append("phone", formData.phone)
+      netlifyFormData.append("message", formData.message)
+      netlifyFormData.append("preferredCommunication", formData.preferredCommunication)
+      netlifyFormData.append("referralSource", formData.referralSource)
+      netlifyFormData.append("smsConsent", formData.smsConsent ? "yes" : "no")
+      netlifyFormData.append("cityName", cityName || "")
+      netlifyFormData.append("timestamp", new Date().toISOString())
+      netlifyFormData.append("sourcePage", "Quote Form")
 
-      if (!makeResponse.ok) {
-        throw new Error("Submission failed")
+      const [netlifyResponse, makeResponse] = await Promise.all([
+        fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: netlifyFormData.toString(),
+        }),
+        fetch("https://hook.us2.make.com/h4hf3qm2o8auqbvxil2yzp5wue5xla2k", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        }),
+      ])
+
+      if (!netlifyResponse.ok && !makeResponse.ok) {
+        throw new Error("Both submissions failed")
       }
 
       // Track successful submission
