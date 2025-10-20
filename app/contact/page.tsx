@@ -34,7 +34,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="text-white font-semibold text-lg mb-2">Address</h3>
-                      <p className="text-gray-300">1671 Univ Business Dr #106</p>
+                      <p className="text-gray-300">1971 Univ Business Dr #106</p>
                       <p className="text-gray-300">McKinney, TX 75071</p>
                     </div>
                   </div>

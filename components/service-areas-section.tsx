@@ -33,7 +33,7 @@ export default function ServiceAreasSection() {
               </div>
               <div>
                 <p className="text-white font-semibold mb-1">Address</p>
-                <p className="text-gray-300">1671 Univ Business Dr #106, McKinney, TX 75071</p>
+                <p className="text-gray-300">1971 Univ Business Dr #106, McKinney, TX 75071</p>
               </div>
             </div>
 
