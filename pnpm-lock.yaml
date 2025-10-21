@@ -159,9 +159,6 @@ importers:
         specifier: 3.25.76
         version: 3.25.76
     devDependencies:
-      '@netlify/plugin-nextjs':
-        specifier: ^5.14.0
-        version: 5.14.0
       '@tailwindcss/postcss':
         specifier: ^4.1.9
         version: 4.1.9
@@ -348,10 +345,6 @@ packages:
 
   '@jridgewell/trace-mapping@0.3.31':
     resolution: {integrity: sha512-zzNR+SdQSDJzc8joaeP8QQoCQr8NuYx2dIIytl1QeBEZHJ9uW6hebsrYgbz8hJwUQao3TWCMtmfV8Nu1twOLAw==}
-
-  '@netlify/plugin-nextjs@5.14.0':
-    resolution: {integrity: sha512-8WEnVm88Ed6v6j/D0iqXDSnAW8Mf9P2CDVgBG3x2+vkiEI48X6Na7KnoQRyi6oulgA6foHIPWqgQIClsPiW20A==}
-    engines: {node: '>=18.0.0'}
 
   '@next/env@15.2.4':
     resolution: {integrity: sha512-+SFtMgoiYP3WoSswuNmxJOCwi06TdWE733D+WPjpXIe4LXGULwEaofiiAy6kbS0+XjM5xF5n3lKuBwN2SnqD9g==}
@@ -1892,8 +1885,6 @@ snapshots:
     dependencies:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.5
-
-  '@netlify/plugin-nextjs@5.14.0': {}
 
   '@next/env@15.2.4': {}
 
