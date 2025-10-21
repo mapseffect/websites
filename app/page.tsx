@@ -397,12 +397,24 @@ export default function HomePage() {
       <Header />
       <HeroSection />
       <TestimonialsSection />
-      <TeslaCertificationSection />
-      <ServicesSection />
-      <GeneracSection />
-      <PermitsSection />
-      <FAQSection />
-      <ServiceAreasSection />
+      <div className="hidden md:block">
+        <TeslaCertificationSection />
+      </div>
+      <div className="hidden md:block">
+        <ServicesSection />
+      </div>
+      <div className="hidden md:block">
+        <GeneracSection />
+      </div>
+      <div className="hidden md:block">
+        <PermitsSection />
+      </div>
+      <div className="hidden md:block">
+        <FAQSection />
+      </div>
+      <div className="hidden md:block">
+        <ServiceAreasSection />
+      </div>
       <Footer />
     </main>
   )

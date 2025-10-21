@@ -10,6 +10,20 @@ export const metadata: Metadata = {
   title: "ABR Electric | Licensed Electricians in Melissa, Anna, McKinney",
   description:
     "ABR Electric provides trusted, licensed electricians in Melissa, Anna, and McKinney. Reliable electrical repair, installation, and service — call today!",
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "LocalBusiness",
+          "@id": "https://electriciannearme.netlify.app",
+          name: "ABR Electric - Melissa Electrician",
+          // Additional structured data can be added here if needed
+        },
+        // Additional entities can be added here if needed
+      ],
+    }),
+  },
 }
 
 export default function MelissaPage() {
