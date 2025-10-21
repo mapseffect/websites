@@ -1,21 +1,12 @@
 [build]
   command = "pnpm run build"
-  publish = ".next"
+  publish = "out"
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"
 
-[[edge_functions]]
-  function = "nextFormsHandler"
-  path = "/*"
-  
 [build.environment]
   NODE_VERSION = "20"
-
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/___netlify-handler"
-  status = 200
 
 [[headers]]
   for = "/*"

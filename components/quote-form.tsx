@@ -368,11 +368,11 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
 
         <form
           name="contact"
-          method="POST"
-          data-netlify="true"
-          data-netlify-honeypot="bot-field"
+          // method="POST"
+          // data-netlify="true"
+          // data-netlify-honeypot="bot-field"
           onSubmit={handleSubmit}
-          className="space-y-4"
+          // className="space-y-4"
         >
           <input type="hidden" name="form-name" value="contact" />
 
