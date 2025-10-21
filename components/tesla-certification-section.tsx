@@ -1,6 +1,6 @@
 export default function TeslaCertificationSection() {
   return (
-    <section className="bg-black py-16">
+    <section className="bg-black py-16 border-t-2 border-b-2 border-[#22c55e]/30">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
           <div className="flex-shrink-0">
@@ -19,7 +19,7 @@ export default function TeslaCertificationSection() {
               <img
                 src="https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/1946a2b2-a6fa-4e79-b11d-99eedaed5100/public"
                 alt="Tesla Certified Installer Badge"
-                className="h-[154px] w-auto"
+                className="h-[185px] w-auto"
               />
             </div>
           </div>

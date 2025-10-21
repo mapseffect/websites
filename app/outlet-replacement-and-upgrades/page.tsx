@@ -1,8 +1,15 @@
+import type { Metadata } from "next"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Outlet Replacement & Upgrades Collin County",
+  description:
+    "Expert outlet replacement and upgrades in Collin County. ABR Electric installs GFCI, USB, smart outlets, and tamper-resistant outlets. Professional electrical services in McKinney, Allen, Frisco. Call 214-690-1941 for a free quote.",
+}
 
 export default function OutletReplacementPage() {
   const outletTypes = [

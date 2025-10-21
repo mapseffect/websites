@@ -1,7 +1,14 @@
+import type { Metadata } from "next"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Outdoor Lighting Installation Collin County",
+  description:
+    "Professional outdoor and landscape lighting installation in Collin County. ABR Electric installs path lighting, security lighting, LED fixtures, and motion-activated systems. Licensed electrician serving McKinney, Allen, Frisco. Call 214-690-1941.",
+}
 
 export default function OutdoorLightingPage() {
   const faqs = [

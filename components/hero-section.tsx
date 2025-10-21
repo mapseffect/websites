@@ -65,7 +65,7 @@ export default function HeroSection() {
               <div className="flex items-start gap-3">
                 <div className="text-[#22c55e] text-xl mt-1">✓</div>
                 <div className="text-white">
-                  <span className="font-semibold">Same-Day Service</span> - Fast response times
+                  <span className="font-semibold">Easy Quote Request</span> - Fast response times
                 </div>
               </div>
               <div className="flex items-start gap-3">
