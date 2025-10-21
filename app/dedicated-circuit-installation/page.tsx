@@ -3,6 +3,13 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import { Check } from "lucide-react"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Dedicated Circuit Installation Collin County | High-Power Appliances",
+  description:
+    "Professional dedicated circuit installation for high-power appliances in Collin County. Kitchen appliances, HVAC, EV chargers, and more. Licensed electricians serving McKinney and surrounding areas.",
+}
 
 export default function DedicatedCircuitPage() {
   const whenYouNeed = [

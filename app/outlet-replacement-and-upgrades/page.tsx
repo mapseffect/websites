@@ -193,7 +193,7 @@ export default function OutletReplacementPage() {
                 shared neutrals, arcing, miswired travelers).
               </p>
               <div className="mt-8">
-                <Link href="/contact">
+                <Link href="/contactus">
                   <Button size="lg" className="bg-[#22c55e] hover:bg-[#16a34a] text-black px-8 py-3">
                     Get a Free Quote
                   </Button>

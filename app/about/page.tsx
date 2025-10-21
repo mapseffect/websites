@@ -2,6 +2,13 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import { Shield, Users, Clock, CheckCircle } from "lucide-react"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric About Us Collin County | Veteran-Owned Electricians",
+  description:
+    "Learn about ABR Electric, a veteran-owned electrical contractor serving Collin County since 2010. Licensed master electricians providing quality electrical services in McKinney, Allen, Frisco, and Plano.",
+}
 
 export default function AboutPage() {
   return (

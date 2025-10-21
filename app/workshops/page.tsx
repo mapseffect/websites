@@ -3,6 +3,13 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import { Check } from "lucide-react"
 import Image from "next/image"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Workshops Collin County | Electrical Training Classes",
+  description:
+    "Professional electrical training workshops in McKinney, TX. Learn electrical skills for homeowners, residential wireman certification, and Texas RAIL license preparation. Limited spots available.",
+}
 
 export default function WorkshopsPage() {
   const workshops = [

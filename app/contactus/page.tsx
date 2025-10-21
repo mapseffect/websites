@@ -2,6 +2,13 @@ import Header from "@/components/header"
 import Footer from "@/components/footer"
 import QuoteForm from "@/components/quote-form"
 import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Contact Us Collin County | Free Quote",
+  description:
+    "Contact ABR Electric for professional electrical services in Collin County. Call (214) 690-1941 for a free quote. Serving McKinney, Allen, Frisco, Plano, and surrounding areas.",
+}
 
 export default function ContactPage() {
   return (

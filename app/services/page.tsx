@@ -1,6 +1,13 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Services Collin County | Professional Electricians",
+  description:
+    "Comprehensive electrical services in Collin County including EV charger installation, panel upgrades, generators, lighting, and more. Licensed master electricians serving McKinney and surrounding areas.",
+}
 
 export default function ServicesPage() {
   const services = [
@@ -62,13 +69,13 @@ export default function ServicesPage() {
       title: "Home Safety Inspection",
       description: "Thorough inspections to detect hazards and ensure compliance.",
       icon: "🧯",
-      href: "/contact",
+      href: "/contactus",
     },
     {
       title: "Security Lighting",
       description: "Bright, motion-activated lighting to deter unwanted visitors.",
       icon: "🔦",
-      href: "/contact",
+      href: "/contactus",
     },
     {
       title: "Motion Sensor Lights",
@@ -408,7 +415,7 @@ export default function ServicesPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/contact"
+                  href="/contactus"
                   className="bg-[#22c55e] text-black px-8 py-4 rounded-lg font-semibold hover:bg-[#16a34a] transition-colors"
                 >
                   Get Free Quote

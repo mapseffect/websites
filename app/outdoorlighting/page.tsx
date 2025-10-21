@@ -182,7 +182,7 @@ export default function OutdoorLightingPage() {
               <div className="mt-8 bg-[#111] border border-gray-800 rounded-lg p-6 text-center">
                 <p className="text-gray-300">
                   <strong className="text-white">Next step:</strong>{" "}
-                  <Link href="/contact" className="text-[#22c55e] hover:text-[#16a34a] font-semibold">
+                  <Link href="/contactus" className="text-[#22c55e] hover:text-[#16a34a] font-semibold">
                     Fill out our form
                   </Link>{" "}
                   and upload photos if possible. Questions? Email{" "}
@@ -213,7 +213,7 @@ export default function OutdoorLightingPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/contact"
+                  href="/contactus"
                   className="bg-[#22c55e] text-black px-8 py-4 rounded-lg font-semibold hover:bg-[#16a34a] transition-colors"
                 >
                   Get Free Quote

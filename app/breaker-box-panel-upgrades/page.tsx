@@ -3,6 +3,13 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { CheckCircle2 } from "lucide-react"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Electrical Panel Upgrades Collin County | Licensed Electricians",
+  description:
+    "Professional electrical panel upgrades in Collin County. Replace outdated Federal Pacific, Zinsco, or Bulldog panels. Licensed master electricians serving McKinney, Allen, Frisco, and Plano. Call (214) 690-1941.",
+}
 
 export default function PanelUpgradesPage() {
   return (

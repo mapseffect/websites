@@ -1,6 +1,13 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Script from "next/script"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Texas RAIL Workshop Collin County | License Prep",
+  description:
+    "Master the Texas Residential Appliance Installer License test with hands-on training in McKinney, TX. Expert guidance, codebook navigation, and real-life application. Limited spots available.",
+}
 
 export default function TexasRailWorkshopPage() {
   return (

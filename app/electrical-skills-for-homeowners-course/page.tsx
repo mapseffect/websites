@@ -1,6 +1,13 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Script from "next/script"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Homeowners Electrical Workshop Collin County | DIY Training",
+  description:
+    "Safe DIY electrical work fundamentals for homeowners in McKinney, TX. Learn basic electrical skills, safe tool usage, and hands-on practice. Perfect for confident homeowners.",
+}
 
 export default function HomeownersCoursePage() {
   return (

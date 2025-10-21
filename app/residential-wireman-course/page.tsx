@@ -1,6 +1,13 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Script from "next/script"
+import type { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "ABR Electric Residential Wireman Course Collin County | Career Training",
+  description:
+    "Career development track for aspiring electricians in McKinney, TX. Test prep training focused on residential wiring careers with hands-on guidance and practice quizzes.",
+}
 
 export default function WiremanCoursePage() {
   return (
