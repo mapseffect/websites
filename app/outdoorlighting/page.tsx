@@ -8,6 +8,70 @@ export const metadata: Metadata = {
   title: "ABR Electric Outdoor Lighting Installation Collin County",
   description:
     "Professional outdoor and landscape lighting installation in Collin County. ABR Electric installs path lighting, security lighting, LED fixtures, and motion-activated systems. Licensed electrician serving McKinney, Allen, Frisco. Call 214-690-1941.",
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Do you install outdoor and landscape lighting?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. ABR Electric installs low-voltage and line-voltage lighting for pathways, gardens, patios, and architectural features. Please fill out our form, send photos if possible, and contact support@abrelectric.com or 214-690-1941.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can you install motion-activated security lighting?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. We install motion-sensor and dusk-to-dawn lights around driveways, garages, and backyards for added safety. Fill out our form with the areas you'd like covered, then call 214-690-1941.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do you offer energy-efficient LED options?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. We install LED fixtures designed for outdoor use that save energy and reduce maintenance. Email support@abrelectric.com or call 214-690-1941 for recommendations.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can you upgrade my existing outdoor lighting system?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. We replace outdated or faulty fixtures, upgrade transformers, and convert older systems to LED. Send photos of your current setup using our form for an accurate estimate.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Is outdoor lighting safe to install near gardens or pools?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. We follow code requirements for weatherproof and GFCI-protected circuits. ABR Electric ensures all outdoor lighting is safe in wet locations. Contact us for a site evaluation.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do you provide design advice for landscape lighting?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes. We help highlight architectural features, trees, and pathways to balance safety with aesthetics. Please fill out our form and upload photos of your yard for tailored suggestions.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does outdoor or security lighting installation cost?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Cost depends on the number of fixtures, wiring length, and whether trenching or new circuits are required. For an accurate quote, fill out our form, send pictures, and call 214-690-1941.",
+          },
+        },
+      ],
+    }),
+  },
 }
 
 export default function OutdoorLightingPage() {

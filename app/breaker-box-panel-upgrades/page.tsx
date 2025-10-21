@@ -9,6 +9,54 @@ export const metadata: Metadata = {
   title: "ABR Electric Electrical Panel Upgrades Collin County | Licensed Electricians",
   description:
     "Professional electrical panel upgrades in Collin County. Replace outdated Federal Pacific, Zinsco, or Bulldog panels. Licensed master electricians serving McKinney, Allen, Frisco, and Plano. Call (214) 690-1941.",
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How do I know if my electrical panel needs replacement?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Older or recalled panels (like Federal Pacific or Zinsco) are common reasons for replacement. If your panel is outdated, undersized, or has visible issues, it's best to have it inspected. Please fill out our form and send pictures if possible, then contact us at support@abrelectric.com or 214-690-1941.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can you replace or change breakers in the panel?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, ABR Electric can replace faulty breakers or adjust amperage where code allows. Each situation requires an inspection to ensure safety and compliance. Reach out at support@abrelectric.com or 214-690-1941 for details.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Why does my breaker keep tripping?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Frequent tripping may indicate a bad breaker, overloaded circuit, or appliance issue. A licensed electrician should inspect before replacement. Please fill out a form and send panel photos if possible, then call us at 214-690-1941.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What's involved in relocating an electrical panel?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Moving a panel requires rewiring, permits, and code compliance. ABR Electric handles all steps, including inspection. Contact us at support@abrelectric.com or 214-690-1941 to discuss your project.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I need surge protection or grounding upgrades with my panel?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Many homeowners add whole-home surge protection and grounding when upgrading panels. ABR Electric can include these in your project. Email support@abrelectric.com or call 214-690-1941 for recommendations.",
+          },
+        },
+      ],
+    }),
+  },
 }
 
 export default function PanelUpgradesPage() {

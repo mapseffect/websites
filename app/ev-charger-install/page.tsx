@@ -9,6 +9,46 @@ export const metadata = {
   title: "ABR Electric EV Charger Installation Collin County | Tesla Certified",
   description:
     "Professional EV charger installation in Collin County. Tesla-certified electricians for Level 2 charger setup, dedicated circuits, and smart charger configuration. Call (214) 690-1941 for expert EV charging solutions.",
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "Do I need a permit?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, and ABR Electric takes care of it for you. We manage all city permits, so your install is 100% legal, inspected, and stress-free.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How long does installation take?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Most installs are done in a single visit. Permits can take 2–5 days depending on the city.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can you install Tesla / Rivian / Lucid chargers?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, we install all Level 2 EVSE equipment and dedicated circuits — including the ChargePoint HomeFlex Level 2 EV Charger.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does it cost to install an EV charger in my garage?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Installation costs typically range from $800-$1,500, but the final price depends on several factors: Depending on the actual distance from the panel and access, cost may vary. Each city has its own permitting costs and inspection requirements that would affect the total cost of the project. We highly recommend following the city's guidelines for electrical permits and inspections. Contact us for a free, detailed quote specific to your installation needs.",
+          },
+        },
+      ],
+    }),
+  },
 }
 
 export default function EVChargerInstallPage() {
