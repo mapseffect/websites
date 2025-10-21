@@ -24,7 +24,7 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            <div className="hidden md:block border-[3px] border-[#F5F5DC] rounded-lg p-6 max-w-xl mb-10">
+            <div className="hidden md:block border-[3px] border-[#F5F5DC] rounded-lg p-8 max-w-xl mb-12">
               <p className="text-white text-center text-lg leading-relaxed">
                 We live by a simple yet powerful motto:
                 <br />
@@ -32,7 +32,51 @@ export default function HeroSection() {
               </p>
             </div>
 
-            <div className="hidden md:flex items-center justify-start gap-6 max-w-xl mt-10 mb-10">
+            <div className="hidden md:block space-y-6 mb-12">
+              <div className="grid grid-cols-3 gap-4 max-w-xl">
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#22c55e] mb-2">5★</div>
+                  <div className="text-sm text-white/80">Google Rating</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#22c55e] mb-2">5★</div>
+                  <div className="text-sm text-white/80">Yelp Rating</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-3xl font-bold text-[#22c55e] mb-2">5★</div>
+                  <div className="text-sm text-white/80">Nextdoor Rating</div>
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:block space-y-4 mb-12 max-w-xl">
+              <div className="flex items-start gap-3">
+                <div className="text-[#22c55e] text-xl mt-1">✓</div>
+                <div className="text-white">
+                  <span className="font-semibold">Licensed & Insured</span> - Fully certified electricians
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#22c55e] text-xl mt-1">✓</div>
+                <div className="text-white">
+                  <span className="font-semibold">Veteran Owned</span> - Proudly serving our community
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#22c55e] text-xl mt-1">✓</div>
+                <div className="text-white">
+                  <span className="font-semibold">Same-Day Service</span> - Fast response times
+                </div>
+              </div>
+              <div className="flex items-start gap-3">
+                <div className="text-[#22c55e] text-xl mt-1">✓</div>
+                <div className="text-white">
+                  <span className="font-semibold">Upfront Pricing</span> - No hidden fees or surprises
+                </div>
+              </div>
+            </div>
+
+            <div className="hidden md:flex items-center justify-start gap-6 max-w-xl mb-12">
               <img
                 src="https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/781dc659-56b3-4b47-4c68-b9b7c07d8c00/public"
                 alt="ABR Electric Service Van"
@@ -45,7 +89,7 @@ export default function HeroSection() {
               />
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 mt-10">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Button
                 asChild
                 variant="outline"

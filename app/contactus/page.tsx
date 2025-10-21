@@ -1,7 +1,7 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import QuoteForm from "@/components/quote-form"
-import { MapPin, Phone, Mail, Clock } from "lucide-react"
+import { MapPin, Phone, Mail, Clock, Shield, Award, Zap } from "lucide-react"
 import type { Metadata } from "next"
 
 export const metadata: Metadata = {
@@ -32,9 +32,10 @@ export default function ContactPage() {
           <div className="container mx-auto px-4">
             <div className="grid lg:grid-cols-2 gap-12 max-w-7xl mx-auto">
               {/* Contact Information */}
-              <div>
+              <div className="space-y-8">
                 <h2 className="text-3xl font-bold text-white mb-8">Get In Touch</h2>
-                <div className="space-y-6">
+
+                <div className="space-y-8">
                   <div className="flex items-start gap-4">
                     <div className="bg-[#22c55e] rounded-full p-3 mt-1">
                       <MapPin className="w-6 h-6 text-black" />
@@ -90,12 +91,52 @@ export default function ContactPage() {
                   </div>
                 </div>
 
+                <div className="mt-12 pt-8 border-t border-gray-800">
+                  <h3 className="text-2xl font-bold text-white mb-6">Why Choose ABR Electric?</h3>
+                  <div className="space-y-4">
+                    <div className="flex items-start gap-3">
+                      <Shield className="w-5 h-5 text-[#22c55e] mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Licensed & Insured</h4>
+                        <p className="text-gray-400 text-sm">
+                          Fully licensed electricians with comprehensive insurance coverage for your peace of mind.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Award className="w-5 h-5 text-[#22c55e] mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Veteran Owned</h4>
+                        <p className="text-gray-400 text-sm">
+                          Proudly veteran-owned and operated, bringing military precision to every job.
+                        </p>
+                      </div>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Zap className="w-5 h-5 text-[#22c55e] mt-1 flex-shrink-0" />
+                      <div>
+                        <h4 className="text-white font-semibold mb-1">Fast Response Time</h4>
+                        <p className="text-gray-400 text-sm">
+                          Same-day service available for most electrical needs. Emergency services 24/7.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
                 {/* Service Areas */}
-                <div className="mt-12">
+                <div className="mt-12 pt-8 border-t border-gray-800">
                   <h3 className="text-2xl font-bold text-white mb-4">Service Areas</h3>
-                  <p className="text-gray-300 mb-4">
+                  <p className="text-gray-300 mb-4 leading-relaxed">
                     We proudly serve McKinney, Allen, Frisco, Plano, Prosper, Wylie, Murphy, Fairview, Princeton, Anna,
-                    Melissa, Celina, and surrounding areas.
+                    Melissa, Celina, and surrounding areas in Collin County.
+                  </p>
+                  <p className="text-gray-400 text-sm">
+                    Not sure if we service your area? Give us a call at{" "}
+                    <a href="tel:+12146901941" className="text-[#22c55e] hover:text-[#16a34a]">
+                      (214) 690-1941
+                    </a>{" "}
+                    and we'll be happy to help!
                   </p>
                 </div>
               </div>

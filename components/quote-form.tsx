@@ -78,8 +78,8 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [formStartTime, setFormStartTime] = useState<number | null>(null)
   const [formStarted, setFormStarted] = useState(false)
+  const [showPhoneConsentReminder, setShowPhoneConsentReminder] = useState(false)
 
-  // Track form start
   useEffect(() => {
     const handleBeforeUnload = () => {
       if (formStarted && !isSubmitting) {
@@ -96,6 +96,14 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     window.addEventListener("beforeunload", handleBeforeUnload)
     return () => window.removeEventListener("beforeunload", handleBeforeUnload)
   }, [formStarted, isSubmitting])
+
+  useEffect(() => {
+    if (formData.phone.trim() && !formData.smsConsent) {
+      setShowPhoneConsentReminder(true)
+    } else {
+      setShowPhoneConsentReminder(false)
+    }
+  }, [formData.phone, formData.smsConsent])
 
   const handleFormStart = () => {
     if (!formStarted) {
@@ -152,27 +160,24 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
   }
 
   const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault()
     // Honeypot check
     if (formData.company) {
-      e.preventDefault()
       return
     }
 
     // Time-based validation
     if (formStartTime && Date.now() - formStartTime < 3000) {
-      e.preventDefault()
       return
     }
 
     // Spam keyword detection
     if (containsSpam(formData.message)) {
-      e.preventDefault()
       return
     }
 
     // Validation
     if (!formData.fullName.trim()) {
-      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter your full name.",
@@ -182,7 +187,6 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (!formData.email.trim() || !validateEmail(formData.email)) {
-      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter a valid email address.",
@@ -192,7 +196,6 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (!formData.message.trim()) {
-      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter a message.",
@@ -201,8 +204,17 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
       return
     }
 
+    if (formData.phone.trim() && !formData.smsConsent) {
+      toast({
+        title: "SMS Consent Required",
+        description:
+          "You've entered a phone number. Please check the SMS consent box below if you'd like to receive text updates from ABR Electric.",
+        variant: "destructive",
+      })
+      return
+    }
+
     if (formData.preferredCommunication === "Text message" && !formData.smsConsent) {
-      e.preventDefault()
       toast({
         title: "Error",
         description: "Please consent to receive SMS messages.",
@@ -246,7 +258,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         <p className="text-white font-bold text-lg">5-Star Reviews ⭐ on Google & Yelp</p>
       </div>
 
-      <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-4">
+      <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-6">
         <input type="hidden" name="access_key" value="812b622e-c9d7-49ce-b706-3985f6f6906f" />
         <input type="hidden" name="from_name" value="ABR Electric" />
         <input type="hidden" name="subject" value="New Lead from ABR Electric Website" />
@@ -263,7 +275,6 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         <input type="hidden" name="sms_consent" value={formData.smsConsent ? "yes" : "no"} />
         <input type="hidden" name="city_name" value={cityName || ""} />
 
-        {/* Honeypot field for spam protection */}
         <input
           type="text"
           name="company"
@@ -375,7 +386,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             onFocus={handleFormStart}
             placeholder="Tell us about your project..."
-            className="bg-white text-black border-[#e5e5e5] rounded-lg min-h-[120px] text-base resize-none"
+            className="bg-white text-black border-[#e5e5e5] rounded-lg min-h-[200px] text-base resize-none"
             required
           />
         </div>
@@ -417,6 +428,15 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
             </SelectContent>
           </Select>
         </div>
+
+        {showPhoneConsentReminder && (
+          <div className="bg-yellow-500/10 border border-yellow-500/30 rounded-lg p-4">
+            <p className="text-yellow-200 text-sm">
+              📱 We noticed you entered a phone number. Would you like to receive text message updates about your
+              service request? If yes, please check the SMS consent box below.
+            </p>
+          </div>
+        )}
 
         <div className="flex items-start gap-2">
           <Checkbox
