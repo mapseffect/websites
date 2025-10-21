@@ -111,6 +111,34 @@ export default function SurgeProtectionPage() {
           </div>
         </section>
 
+        {/* About ABR Electric Section */}
+        <section className="py-16 bg-black">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+                Why Choose ABR Electric for Surge Protection
+              </h2>
+              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                ABR Electric is a veteran-owned electrical company based in McKinney, Texas, serving all of Collin
+                County with professional whole-house surge protection installation. Our licensed electricians have
+                extensive experience protecting homes and businesses from damaging power surges caused by lightning
+                strikes, utility grid fluctuations, and large appliance cycling. We install high-quality panel-mounted
+                surge protection devices that safeguard your entire electrical system, along with point-of-use surge
+                protectors for sensitive electronics and equipment.
+              </p>
+              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                Power surges can destroy expensive appliances, electronics, HVAC systems, and smart home devices in an
+                instant. Our whole-house surge protection systems provide the first line of defense at your electrical
+                panel, preventing damaging voltage spikes from entering your home's wiring. We serve homeowners and
+                businesses throughout McKinney, Frisco, Plano, Allen, Prosper, and surrounding areas with expert surge
+                protection solutions. Our installations include comprehensive testing, warranty coverage, and ongoing
+                support to ensure your valuable equipment stays protected. With upfront pricing and professional
+                service, ABR Electric makes it easy to protect your investment in home electronics and appliances.
+              </p>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-[#1a0a0a] via-black to-[#0a1a0a]">
           <div className="container mx-auto px-4">

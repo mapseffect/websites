@@ -74,8 +74,37 @@ export default function SmokeDetectorInstallationPage() {
           </div>
         </section>
 
-        {/* Smoke Detector Services */}
+        {/* About ABR Electric */}
         <section className="py-16 bg-black">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
+                Professional Smoke Detector Installation
+              </h2>
+              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                ABR Electric is a veteran-owned electrical company serving Collin County with professional smoke
+                detector installation services. Our licensed electricians specialize in hardwired smoke alarm systems
+                that provide reliable fire protection for your home and family. We install interconnected smoke
+                detectors that meet all local building codes and safety requirements, ensuring your home has the best
+                possible fire detection system. With years of experience serving McKinney, Frisco, Plano, Allen, and
+                surrounding communities, we understand the importance of properly installed and maintained smoke
+                detection systems.
+              </p>
+              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                Our smoke detector installation service includes a comprehensive assessment of your home's layout to
+                determine optimal detector placement, professional installation of hardwired units with battery backup,
+                interconnection of all detectors so they all sound when one is triggered, and thorough testing to ensure
+                proper operation. We work with the latest smart smoke detector technology that can send alerts to your
+                phone and integrate with your home automation system. Whether you're building a new home, upgrading an
+                older system, or need to bring your property up to current code requirements, ABR Electric provides
+                expert smoke detector installation with upfront pricing and guaranteed workmanship.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Smoke Detector Services */}
+        <section className="py-16 bg-gradient-to-br from-[#0a1a0a] via-black to-[#1a0a0a]">
           <div className="container mx-auto px-4">
             <div className="max-w-7xl mx-auto">
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-12 text-center">Smoke Detector Services</h2>
