@@ -160,24 +160,27 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
   }
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
     // Honeypot check
     if (formData.company) {
+      e.preventDefault()
       return
     }
 
     // Time-based validation
     if (formStartTime && Date.now() - formStartTime < 3000) {
+      e.preventDefault()
       return
     }
 
     // Spam keyword detection
     if (containsSpam(formData.message)) {
+      e.preventDefault()
       return
     }
 
     // Validation
     if (!formData.fullName.trim()) {
+      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter your full name.",
@@ -187,6 +190,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (!formData.email.trim() || !validateEmail(formData.email)) {
+      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter a valid email address.",
@@ -196,6 +200,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (!formData.message.trim()) {
+      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter a message.",
@@ -205,6 +210,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (formData.phone.trim() && !formData.smsConsent) {
+      e.preventDefault()
       toast({
         title: "SMS Consent Required",
         description:
@@ -215,6 +221,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (formData.preferredCommunication === "Text message" && !formData.smsConsent) {
+      e.preventDefault()
       toast({
         title: "Error",
         description: "Please consent to receive SMS messages.",
