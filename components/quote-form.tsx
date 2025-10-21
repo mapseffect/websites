@@ -260,14 +260,10 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
 
       <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-6">
         <input type="hidden" name="access_key" value="812b622e-c9d7-49ce-b706-3985f6f6906f" />
-        <input type="hidden" name="from_name" value="ABR Electric" />
-        <input type="hidden" name="subject" value="New Lead from ABR Electric Website" />
+        <input type="hidden" name="from_name" value="ABR Electric Website" />
+        <input type="hidden" name="subject" value="New Form Submission - abrelectric.com site" />
+        <input type="hidden" name="replyto" value="support@abrelectric.com" />
         <input type="hidden" name="redirect" value="https://abrelectric.com/thankyou" />
-        <input
-          type="hidden"
-          name="autoresponse"
-          value="Thank you for submitting your request to ABR Electric. We appreciate the opportunity to serve you.&#10;&#10;This is an automated response to confirm that we have received your message. Our team will review your request and get back to you as soon as possible.&#10;&#10;Thank you for choosing ABR Electric.&#10;&#10;ABR Electric Team"
-        />
 
         <input type="hidden" name="services" value={formData.services.join(", ")} />
         <input type="hidden" name="preferred_communication" value={formData.preferredCommunication} />
