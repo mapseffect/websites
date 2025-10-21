@@ -4,6 +4,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { Check, Shield, Bell, Zap, Home, AlertTriangle, Battery, Wifi } from "lucide-react"
 
+export const metadata = {
+  title: "ABR Electric Smoke Detector Installation Collin County | Hardwired & Interconnected Systems",
+  description:
+    "Professional smoke detector installation in Collin County. Hardwired, interconnected alarm systems with battery backup. Code-compliant placement and smart smoke detectors. Call (214) 690-1941 for fire safety protection.",
+}
+
 export default function SmokeDetectorInstallationPage() {
   const services = [
     { icon: Zap, title: "Hardwired smoke detectors", description: "Reliable power from your home's electrical system" },

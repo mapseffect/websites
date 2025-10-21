@@ -2,6 +2,12 @@ import Link from "next/link"
 import { Button } from "@/components/ui/button"
 import { CheckCircle } from "lucide-react"
 
+export const metadata = {
+  title: "Thank You - ABR Electric | Quote Request Received",
+  description:
+    "Thank you for contacting ABR Electric. We've received your quote request and will respond within 24 hours. For immediate assistance, call (214) 690-1941.",
+}
+
 export default function ThankYouPage() {
   return (
     <main className="min-h-screen bg-black flex items-center justify-center px-4">

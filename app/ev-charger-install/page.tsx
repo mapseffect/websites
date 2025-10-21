@@ -5,6 +5,12 @@ import { CheckCircle, Zap } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
 
+export const metadata = {
+  title: "ABR Electric EV Charger Installation Collin County | Tesla Certified",
+  description:
+    "Professional EV charger installation in Collin County. Tesla-certified electricians for Level 2 charger setup, dedicated circuits, and smart charger configuration. Call (214) 690-1941 for expert EV charging solutions.",
+}
+
 export default function EVChargerInstallPage() {
   const benefits = [
     "Tesla-certified installation expertise",

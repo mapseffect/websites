@@ -4,6 +4,12 @@ import Link from "next/link"
 import Image from "next/image"
 import { Phone } from "lucide-react"
 
+export const metadata = {
+  title: "ABR Electric Lighting Fixture Installation Collin County | Recessed Lighting & Chandeliers",
+  description:
+    "Expert lighting fixture installation in Collin County. Recessed lighting, ceiling fans, chandeliers, and custom lighting design. Licensed electricians for residential lighting solutions. Call (214) 690-1941.",
+}
+
 export default function LightingFixturePage() {
   const services = [
     {

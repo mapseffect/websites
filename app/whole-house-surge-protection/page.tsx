@@ -4,6 +4,12 @@ import Link from "next/link"
 import { Check, Shield, Zap, Home, Cpu, Tv, Heart } from "lucide-react"
 import Image from "next/image"
 
+export const metadata = {
+  title: "ABR Electric Whole House Surge Protection Collin County | Panel-Mounted Surge Devices",
+  description:
+    "Professional whole-house surge protection installation in Collin County. Protect appliances, electronics, and HVAC systems from power surges. Panel-mounted surge devices and lightning protection. Call (214) 690-1941.",
+}
+
 export default function SurgeProtectionPage() {
   const services = [
     "Whole house surge protectors",

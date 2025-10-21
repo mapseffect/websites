@@ -4,6 +4,12 @@ import Link from "next/link"
 import { CheckCircle2 } from "lucide-react"
 import GeneratorFAQ from "@/components/generator-faq"
 
+export const metadata = {
+  title: "ABR Electric Generator Installation Collin County | Authorized Generac Dealer",
+  description:
+    "Authorized Generac dealer in Collin County. Professional whole-house generator installation with automatic backup power, permits, and expert setup. Call (214) 690-1941 for reliable backup power solutions.",
+}
+
 export default function GeneratorsPage() {
   const advantages = [
     {
