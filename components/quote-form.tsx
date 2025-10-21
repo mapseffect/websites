@@ -152,28 +152,27 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
   }
 
   const handleSubmit = async (e: FormEvent) => {
-    e.preventDefault()
-
     // Honeypot check
     if (formData.company) {
-      // Silent rejection
+      e.preventDefault()
       return
     }
 
     // Time-based validation
     if (formStartTime && Date.now() - formStartTime < 3000) {
-      // Silent rejection - too fast
+      e.preventDefault()
       return
     }
 
     // Spam keyword detection
     if (containsSpam(formData.message)) {
-      // Silent rejection
+      e.preventDefault()
       return
     }
 
     // Validation
     if (!formData.fullName.trim()) {
+      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter your full name.",
@@ -183,6 +182,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (!formData.email.trim() || !validateEmail(formData.email)) {
+      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter a valid email address.",
@@ -192,6 +192,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (!formData.message.trim()) {
+      e.preventDefault()
       toast({
         title: "Error",
         description: "Please enter a message.",
@@ -201,6 +202,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
     }
 
     if (formData.preferredCommunication === "Text message" && !formData.smsConsent) {
+      e.preventDefault()
       toast({
         title: "Error",
         description: "Please consent to receive SMS messages.",
@@ -209,70 +211,19 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
       return
     }
 
-    setIsSubmitting(true)
-
-    try {
-      const payload = {
-        ...formData,
-        services: formData.services.join(", "),
-        sms_consent: formData.smsConsent ? "yes" : "no",
-        timestamp: new Date().toISOString(),
-        source_page: "Quote Form",
-        city_name: cityName || "",
-      }
-
-      const makeResponse = await fetch("https://hook.us2.make.com/h4hf3qm2o8auqbvxil2yzp5wue5xla2k", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+    // Track successful submission
+    if (window.gtag) {
+      window.gtag("event", "form_submit", {
+        form_name: "quote_request",
       })
-
-      if (!makeResponse.ok) {
-        throw new Error("Submission failed")
-      }
-
-      // Track successful submission
-      if (window.gtag) {
-        window.gtag("event", "form_submit", {
-          form_name: "quote_request",
-        })
-        window.gtag("event", "generate_lead", {
-          value: 500,
-          currency: "USD",
-        })
-      }
-
-      toast({
-        title: "Quote Request Sent!",
-        description: "We'll get back to you within 24 hours with your free quote.",
+      window.gtag("event", "generate_lead", {
+        value: 500,
+        currency: "USD",
       })
-
-      // Reset form
-      setTimeout(() => {
-        setFormData({
-          fullName: "",
-          email: "",
-          services: [],
-          phone: "",
-          message: "",
-          preferredCommunication: "",
-          referralSource: "",
-          smsConsent: false,
-          company: "",
-        })
-        setFormStarted(false)
-        setFormStartTime(null)
-        router.push("/thankyou")
-      }, 2000)
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to send quote request. Please try again or contact us directly.",
-        variant: "destructive",
-      })
-    } finally {
-      setIsSubmitting(false)
     }
+
+    // Allow native form submission to Web3Forms
+    setIsSubmitting(true)
   }
 
   return (
@@ -295,7 +246,24 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
         <p className="text-white font-bold text-lg">5-Star Reviews ⭐ on Google & Yelp</p>
       </div>
 
-      <form onSubmit={handleSubmit} className="space-y-4">
+      <form action="https://api.web3forms.com/submit" method="POST" onSubmit={handleSubmit} className="space-y-4">
+        <input type="hidden" name="access_key" value="812b622e-c9d7-49ce-b706-3985f6f6906f" />
+        <input type="hidden" name="from_name" value="ABR Electric" />
+        <input type="hidden" name="subject" value="New Lead from ABR Electric Website" />
+        <input type="hidden" name="redirect" value="https://abrelectric.com/thankyou" />
+        <input
+          type="hidden"
+          name="autoresponse"
+          value="Thank you for submitting your request to ABR Electric. We appreciate the opportunity to serve you.&#10;&#10;This is an automated response to confirm that we have received your message. Our team will review your request and get back to you as soon as possible.&#10;&#10;Thank you for choosing ABR Electric.&#10;&#10;ABR Electric Team"
+        />
+
+        <input type="hidden" name="services" value={formData.services.join(", ")} />
+        <input type="hidden" name="preferred_communication" value={formData.preferredCommunication} />
+        <input type="hidden" name="referral_source" value={formData.referralSource} />
+        <input type="hidden" name="sms_consent" value={formData.smsConsent ? "yes" : "no"} />
+        <input type="hidden" name="city_name" value={cityName || ""} />
+
+        {/* Honeypot field for spam protection */}
         <input
           type="text"
           name="company"
@@ -321,6 +289,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
               placeholder="Full Name"
               className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
               autoComplete="name"
+              required
             />
           </div>
 
@@ -338,6 +307,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
               placeholder="Email"
               className="bg-white text-black border-[#e5e5e5] rounded-lg h-12 text-base"
               autoComplete="email"
+              required
             />
           </div>
         </div>
@@ -406,6 +376,7 @@ export default function QuoteForm({ logo, cityName }: QuoteFormProps) {
             onFocus={handleFormStart}
             placeholder="Tell us about your project..."
             className="bg-white text-black border-[#e5e5e5] rounded-lg min-h-[120px] text-base resize-none"
+            required
           />
         </div>
 
