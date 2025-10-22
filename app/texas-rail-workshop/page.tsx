@@ -3,6 +3,7 @@ import Footer from "@/components/footer"
 import Script from "next/script"
 import type { Metadata } from "next"
 import { Shield, Award, BookOpen, CheckCircle } from "lucide-react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 
 export const metadata: Metadata = {
   title: "ABR Electric Texas RAIL Workshop Collin County | License Prep",
@@ -11,8 +12,56 @@ export const metadata: Metadata = {
 }
 
 export default function TexasRailWorkshopPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: [
+      {
+        "@type": "Question",
+        name: "What is the Texas RAIL Exam?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: 'The "Texas RAIL exam" refers to the Residential Appliance Installer (RAIL) license exam. It\'s an open-book test for individuals looking to install residential appliances in Texas. The exam is administered at a state-approved testing center after processing your license application and fees.',
+        },
+      },
+      {
+        "@type": "Question",
+        name: "What are the key exam details?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "- **Passing Score**: 70% or higher\n- **Number of Questions**: 80\n- **Time Limit**: 240 minutes\n- **Exam Type**: Open-book\n- **Cost**: $64 (exam fee)\n- **Administrator**: PSI (after approval from the Texas Department of Licensing and Regulation, or TDLR)",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Who is eligible to take the RAIL exam?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "To be eligible, you must submit a completed application and fee to the Texas Department of Licensing and Regulation (TDLR) for the Residential Appliance Installer license. There are no prior experience requirements for this license.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How can I prepare for the RAIL exam?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Effective preparation includes:\n- **Study the National Electrical Code (NEC)**: The exam is heavily based on the latest edition of the NEC, so focus on building a thorough understanding of the code.\n- **Take practice tests**: Use available resources to simulate the exam and pinpoint weak areas.\n- **Enroll in a prep course**: Consider in-person or online classes from schools specializing in RAIL exam preparation.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How do I take the RAIL exam?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Follow these steps:\n1. Apply for the Residential Appliance Installer license with the TDLR.\n2. Once your application is approved, PSI will email you instructions to schedule the exam.\n3. Take the exam at a PSI testing center.\n4. Achieve a passing score of 70% or higher to succeed.\n\nFor the most current information, visit the [TDLR website](https://www.tdlr.texas.gov/) or contact PSI directly.",
+        },
+      },
+    ],
+  }
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <Header />
       <main className="pt-20">
         {/* Hero Section */}
@@ -71,6 +120,122 @@ export default function TexasRailWorkshopPage() {
                   <p className="text-gray-400 text-sm">Serving Collin County</p>
                 </div>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 bg-gray-900">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                Texas Residential Appliance Installer (RAIL) License Exam FAQ
+              </h2>
+            </div>
+            <div className="max-w-4xl mx-auto">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="item-1" className="border border-gray-700 rounded-lg px-6 bg-[#1a2332]">
+                  <AccordionTrigger className="text-white hover:text-[#22c55e] text-left">
+                    What is the Texas RAIL Exam?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 pt-4">
+                    The "Texas RAIL exam" refers to the Residential Appliance Installer (RAIL) license exam. It's an
+                    open-book test for individuals looking to install residential appliances in Texas. The exam is
+                    administered at a state-approved testing center after processing your license application and fees.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="border border-gray-700 rounded-lg px-6 bg-[#1a2332]">
+                  <AccordionTrigger className="text-white hover:text-[#22c55e] text-left">
+                    What are the key exam details?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 pt-4">
+                    <ul className="space-y-2">
+                      <li>
+                        <strong className="text-white">Passing Score:</strong> 70% or higher
+                      </li>
+                      <li>
+                        <strong className="text-white">Number of Questions:</strong> 80
+                      </li>
+                      <li>
+                        <strong className="text-white">Time Limit:</strong> 240 minutes
+                      </li>
+                      <li>
+                        <strong className="text-white">Exam Type:</strong> Open-book
+                      </li>
+                      <li>
+                        <strong className="text-white">Cost:</strong> $64 (exam fee)
+                      </li>
+                      <li>
+                        <strong className="text-white">Administrator:</strong> PSI (after approval from the Texas
+                        Department of Licensing and Regulation, or TDLR)
+                      </li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="border border-gray-700 rounded-lg px-6 bg-[#1a2332]">
+                  <AccordionTrigger className="text-white hover:text-[#22c55e] text-left">
+                    Who is eligible to take the RAIL exam?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 pt-4">
+                    To be eligible, you must submit a completed application and fee to the Texas Department of Licensing
+                    and Regulation (TDLR) for the Residential Appliance Installer license. There are no prior experience
+                    requirements for this license.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="border border-gray-700 rounded-lg px-6 bg-[#1a2332]">
+                  <AccordionTrigger className="text-white hover:text-[#22c55e] text-left">
+                    How can I prepare for the RAIL exam?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 pt-4">
+                    <p className="mb-3">Effective preparation includes:</p>
+                    <ul className="space-y-2 list-disc list-inside">
+                      <li>
+                        <strong className="text-white">Study the National Electrical Code (NEC):</strong> The exam is
+                        heavily based on the latest edition of the NEC, so focus on building a thorough understanding of
+                        the code.
+                      </li>
+                      <li>
+                        <strong className="text-white">Take practice tests:</strong> Use available resources to simulate
+                        the exam and pinpoint weak areas.
+                      </li>
+                      <li>
+                        <strong className="text-white">Enroll in a prep course:</strong> Consider in-person or online
+                        classes from schools specializing in RAIL exam preparation.
+                      </li>
+                    </ul>
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="border border-gray-700 rounded-lg px-6 bg-[#1a2332]">
+                  <AccordionTrigger className="text-white hover:text-[#22c55e] text-left">
+                    How do I take the RAIL exam?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 pt-4">
+                    <p className="mb-3">Follow these steps:</p>
+                    <ol className="space-y-2 list-decimal list-inside">
+                      <li>Apply for the Residential Appliance Installer license with the TDLR.</li>
+                      <li>Once your application is approved, PSI will email you instructions to schedule the exam.</li>
+                      <li>Take the exam at a PSI testing center.</li>
+                      <li>Achieve a passing score of 70% or higher to succeed.</li>
+                    </ol>
+                    <p className="mt-4">
+                      For the most current information, visit the{" "}
+                      <a
+                        href="https://www.tdlr.texas.gov/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#22c55e] hover:underline"
+                      >
+                        TDLR website
+                      </a>{" "}
+                      or contact PSI directly.
+                    </p>
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
         </section>
