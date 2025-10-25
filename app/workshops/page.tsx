@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "ABR Electric Workshops Collin County | Electrical Training Classes",
   description:
     "Professional electrical training workshops in McKinney, TX. Learn electrical skills for homeowners, residential wireman certification, and Texas RAIL license preparation. Limited spots available.",
+  alternates: {
+    canonical: "https://abrelectric.com/workshops",
+  },
 }
 
 export default function WorkshopsPage() {

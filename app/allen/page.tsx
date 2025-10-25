@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "ABR Electric Allen TX | Licensed Electrician Services",
   description:
     "ABR Electric provides trusted, licensed electrician services in Allen, TX. Professional electrical repair, installation, and maintenance. Call (214) 690-1941 for reliable service in Allen and surrounding areas.",
+  alternates: {
+    canonical: "https://abrelectric.com/allen",
+  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
@@ -350,7 +353,7 @@ export const metadata: Metadata = {
             },
             {
               "@type": "Question",
-              name: "Can you add outlets in closets, garages, or utility spaces?",
+              name: "Can you safely add outlets in closets, garages, or utility spaces?",
               acceptedAnswer: {
                 "@type": "Answer",
                 text: "Yes. ABR Electric safely adds outlets where needed, including GFCI-protected outlets in required areas. Please fill out our form with details and photos.",

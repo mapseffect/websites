@@ -6,6 +6,9 @@ export const metadata = {
   title: "Thank You - ABR Electric | Quote Request Received",
   description:
     "Thank you for contacting ABR Electric. We've received your quote request and will respond within 24 hours. For immediate assistance, call (214) 690-1941.",
+  alternates: {
+    canonical: "https://abrelectric.com/thankyou",
+  },
 }
 
 export default function ThankYouPage() {

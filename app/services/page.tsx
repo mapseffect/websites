@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   title: "ABR Electric Services Collin County | Professional Electricians",
   description:
     "Comprehensive electrical services in Collin County including EV charger installation, panel upgrades, generators, lighting, and more. Licensed master electricians serving McKinney and surrounding areas.",
+  alternates: {
+    canonical: "https://abrelectric.com/services",
+  },
 }
 
 export default function ServicesPage() {

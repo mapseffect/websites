@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "ABR Electric Contact Us Collin County | Free Quote",
   description:
     "Contact ABR Electric for professional electrical services in Collin County. Call (214) 690-1941 for a free quote. Serving McKinney, Allen, Frisco, Plano, and surrounding areas.",
+  alternates: {
+    canonical: "https://abrelectric.com/contactus",
+  },
 }
 
 export default function ContactPage() {

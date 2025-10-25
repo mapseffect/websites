@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "ABR Electric | Licensed Electricians in McKinney, Allen, Plano",
   description:
     "ABR Electric provides trusted, licensed electricians in McKinney, Allen, and Plano. Reliable electrical repair, installation, and service — call today!",
+  alternates: {
+    canonical: "https://abrelectric.com/mckinney",
+  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",

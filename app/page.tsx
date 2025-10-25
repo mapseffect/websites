@@ -14,6 +14,9 @@ export const metadata: Metadata = {
   title: "ABR Electric | McKinney Electricians Serving Allen, Frisco & Plano",
   description:
     "Licensed & Insured electricians serving McKinney, Allen, Frisco & Plano. 5-star reviews on Google & Yelp. Call (214) 690-1941 for a free quote.",
+  alternates: {
+    canonical: "https://abrelectric.com",
+  },
 }
 
 const structuredData = {

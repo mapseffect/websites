@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "ABR Electric About Us Collin County | Veteran-Owned Electricians",
   description:
     "Learn about ABR Electric, a veteran-owned electrical contractor serving Collin County since 2010. Licensed master electricians providing quality electrical services in McKinney, Allen, Frisco, and Plano.",
+  alternates: {
+    canonical: "https://abrelectric.com/about",
+  },
 }
 
 export default function AboutPage() {

@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "ABR Electric | Licensed Electricians in Frisco, Plano, Prosper",
   description:
     "ABR Electric provides trusted, licensed electricians in Frisco, Plano, and Prosper. Reliable electrical repair, installation, and service — call today!",
+  alternates: {
+    canonical: "https://abrelectric.com/frisco",
+  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",

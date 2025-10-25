@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   title: "ABR Electric | Licensed Electricians in Prosper, Frisco, Celina",
   description:
     "ABR Electric provides trusted, licensed electricians in Prosper, Frisco, and Celina. Reliable electrical repair, installation, and service — call today!",
+  alternates: {
+    canonical: "https://abrelectric.com/prosper",
+  },
   other: {
     "application/ld+json": JSON.stringify({
       "@context": "https://schema.org",
