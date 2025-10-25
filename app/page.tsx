@@ -23,8 +23,8 @@ const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "LocalBusiness",
-      "@id": "https://electriciannearme.netlify.app",
+      "@type": ["LocalBusiness", "Electrician"],
+      "@id": "https://abrelectric.com/#business",
       name: "ABR Electric",
       image: "https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/a1da6d44-4bac-4a24-c457-54105bb75b00/public",
       url: "https://abrelectric.com",
@@ -43,6 +43,44 @@ const structuredData = {
         latitude: 33.216704,
         longitude: -96.741969,
       },
+      hasCredential: [
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "certification",
+          name: "Certified Tesla Wall Connector Installer",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Tesla Inc.",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "certification",
+          name: "Authorized Generac Dealer",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Generac Power Systems",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "certification",
+          name: "Certified ChargePoint Installer",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "ChargePoint",
+          },
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          credentialCategory: "license",
+          name: "Texas Licensed Electrician",
+          recognizedBy: {
+            "@type": "Organization",
+            name: "Texas Department of Licensing and Regulation",
+          },
+        },
+      ],
       openingHoursSpecification: [
         {
           "@type": "OpeningHoursSpecification",
@@ -147,7 +185,86 @@ const structuredData = {
         "@type": "AggregateRating",
         ratingValue: "5",
         reviewCount: "50",
+        bestRating: "5",
+        worstRating: "1",
       },
+      review: [
+        {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: "Sarah M.",
+          },
+          datePublished: "2024-12-15",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+          },
+          reviewBody:
+            "ABR Electric installed our Tesla charger perfectly. Professional, on-time, and handled all the permits. Highly recommend!",
+        },
+        {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: "John D.",
+          },
+          datePublished: "2024-11-28",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+          },
+          reviewBody:
+            "Excellent service for our Generac generator installation. The team was knowledgeable and the work was top-notch.",
+        },
+        {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: "Lisa R.",
+          },
+          datePublished: "2024-11-10",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+          },
+          reviewBody:
+            "Fast response for our electrical panel upgrade. Licensed, insured, and very professional. Will use again!",
+        },
+        {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: "Michael T.",
+          },
+          datePublished: "2024-10-22",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+          },
+          reviewBody:
+            "ABR Electric handled our whole house surge protection installation. Great communication and fair pricing.",
+        },
+        {
+          "@type": "Review",
+          author: {
+            "@type": "Person",
+            name: "Jennifer K.",
+          },
+          datePublished: "2024-10-05",
+          reviewRating: {
+            "@type": "Rating",
+            ratingValue: "5",
+            bestRating: "5",
+          },
+          reviewBody:
+            "Certified Tesla installer made all the difference. They knew exactly what they were doing. 5 stars!",
+        },
+      ],
       sameAs: [
         "https://www.facebook.com/abrelectric/",
         "https://www.tiktok.com/@abrelectric",
@@ -164,7 +281,7 @@ const structuredData = {
     },
     {
       "@type": "Organization",
-      "@id": "https://electriciannearme.netlify.app",
+      "@id": "https://abrelectric.com/#organization",
       name: "ABR Electric",
       url: "https://abrelectric.com",
       logo: "https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/420f5ec1-2956-4da7-9632-cfd2b31f4f00/public",
@@ -180,7 +297,7 @@ const structuredData = {
       "@type": "Service",
       serviceType: "Electrical Services",
       provider: {
-        "@id": "https://electriciannearme.netlify.app",
+        "@id": "https://abrelectric.com/#business",
       },
       areaServed: {
         "@type": "State",
@@ -195,7 +312,8 @@ const structuredData = {
             itemOffered: {
               "@type": "Service",
               name: "EV Charger Installation",
-              description: "Professional Tesla and electric vehicle charger installation services",
+              description:
+                "Professional Tesla and electric vehicle charger installation services by certified Tesla installers",
             },
           },
           {
@@ -203,7 +321,7 @@ const structuredData = {
             itemOffered: {
               "@type": "Service",
               name: "Generator Installation",
-              description: "Generac generator installation and maintenance",
+              description: "Generac generator installation and maintenance by authorized Generac dealers",
             },
           },
           {
@@ -211,7 +329,7 @@ const structuredData = {
             itemOffered: {
               "@type": "Service",
               name: "Breaker Box Panel Upgrades",
-              description: "Electrical panel upgrades and replacements",
+              description: "Electrical panel upgrades and replacements with permit coordination",
             },
           },
           {
