@@ -1,5 +1,6 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import ServiceAreasSection from "@/components/service-areas-section"
 import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { CheckCircle2 } from "lucide-react"
@@ -318,6 +319,9 @@ export default function PanelUpgradesPage() {
             </div>
           </div>
         </section>
+
+        {/* Service Areas Section */}
+        <ServiceAreasSection />
       </main>
       <Footer />
     </>

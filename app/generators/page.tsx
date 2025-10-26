@@ -1,5 +1,6 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import ServiceAreasSection from "@/components/service-areas-section"
 import Link from "next/link"
 import { CheckCircle2 } from "lucide-react"
 import GeneratorFAQ from "@/components/generator-faq"
@@ -244,6 +245,9 @@ export default function GeneratorsPage() {
             </div>
           </div>
         </section>
+
+        {/* Service Areas Section */}
+        <ServiceAreasSection />
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-[#1a0a0a] via-black to-[#0a1a0a]">

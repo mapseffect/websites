@@ -3,11 +3,62 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import Image from "next/image"
 import { Check, Shield, Bell, Zap, Home, AlertTriangle, Battery, Wifi } from "lucide-react"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "ABR Electric Smoke Detector Installation Collin County | Hardwired & Interconnected Systems",
   description:
     "Professional smoke detector installation in Collin County. Hardwired, interconnected alarm systems with battery backup. Code-compliant placement and smart smoke detectors. Call (214) 690-1941 for fire safety protection.",
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How often should smoke detectors be replaced?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Smoke detectors should be replaced every 10 years, even if they appear to be working. The sensors degrade over time, reducing effectiveness. We install modern 10-year sealed battery units that eliminate the need for battery changes.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "What's the difference between hardwired and battery-powered smoke detectors?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Hardwired smoke detectors connect to your home's electrical system with battery backup, providing reliable power and allowing interconnection so all alarms sound together. Battery-only units are easier to install but require regular battery changes and can't be interconnected.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Where should smoke detectors be installed?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Code requires smoke detectors in every bedroom, outside each sleeping area, and on every level of the home including basements. We ensure proper placement on ceilings or high on walls, away from corners and air vents for optimal detection.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I need interconnected smoke detectors?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, current building codes require all smoke detectors to be interconnected so when one detects smoke, all alarms sound throughout the home. This provides early warning regardless of where the fire starts, giving you and your family more time to escape safely.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Can I install smoke detectors myself?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "While battery-powered units can be DIY, hardwired and interconnected systems require professional installation to ensure proper electrical connections, code compliance, and reliable operation. Our licensed electricians ensure your system is installed correctly and tested thoroughly.",
+          },
+        },
+      ],
+    }),
+  },
 }
 
 export default function SmokeDetectorInstallationPage() {
@@ -169,6 +220,84 @@ export default function SmokeDetectorInstallationPage() {
                   Call: (214) 690-1941
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 bg-gradient-to-br from-[#0a1a0a] via-black to-[#1a0a0a]">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+              <p className="text-lg text-gray-300 mb-8">
+                Common questions about smoke detector installation and fire safety from our licensed electricians.
+              </p>
+              <div className="mt-8">
+                <Link href="/contactus">
+                  <Button size="lg" className="bg-[#22c55e] hover:bg-[#16a34a] text-black px-8 py-3">
+                    Get a Free Quote
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto mt-16">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="item-1" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    How often should smoke detectors be replaced?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    Smoke detectors should be replaced every 10 years, even if they appear to be working. The sensors
+                    degrade over time, reducing effectiveness. We install modern 10-year sealed battery units that
+                    eliminate the need for battery changes.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    What's the difference between hardwired and battery-powered smoke detectors?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    Hardwired smoke detectors connect to your home's electrical system with battery backup, providing
+                    reliable power and allowing interconnection so all alarms sound together. Battery-only units are
+                    easier to install but require regular battery changes and can't be interconnected.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    Where should smoke detectors be installed?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    Code requires smoke detectors in every bedroom, outside each sleeping area, and on every level of
+                    the home including basements. We ensure proper placement on ceilings or high on walls, away from
+                    corners and air vents for optimal detection.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    Do I need interconnected smoke detectors?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    Yes, current building codes require all smoke detectors to be interconnected so when one detects
+                    smoke, all alarms sound throughout the home. This provides early warning regardless of where the
+                    fire starts, giving you and your family more time to escape safely.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    Can I install smoke detectors myself?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    While battery-powered units can be DIY, hardwired and interconnected systems require professional
+                    installation to ensure proper electrical connections, code compliance, and reliable operation. Our
+                    licensed electricians ensure your system is installed correctly and tested thoroughly.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
         </section>

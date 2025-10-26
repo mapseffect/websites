@@ -3,11 +3,62 @@ import Footer from "@/components/footer"
 import Link from "next/link"
 import { Check, Shield, Zap, Home, Cpu, Tv, Heart } from "lucide-react"
 import Image from "next/image"
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
+import { Button } from "@/components/ui/button"
+import type { Metadata } from "next"
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "ABR Electric Whole House Surge Protection Collin County | Panel-Mounted Surge Devices",
   description:
     "Professional whole-house surge protection installation in Collin County. Protect appliances, electronics, and HVAC systems from power surges. Panel-mounted surge devices and lightning protection. Call (214) 690-1941.",
+  other: {
+    "application/ld+json": JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: [
+        {
+          "@type": "Question",
+          name: "How does whole house surge protection work?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "A whole-house surge protector installs at your electrical panel and diverts excess voltage to ground before it enters your home's wiring. It protects against surges from lightning strikes, utility grid fluctuations, and large appliances cycling on and off.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Will a surge protector protect against lightning?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Whole-house surge protectors provide significant protection against lightning-induced surges, but no device can guarantee 100% protection from a direct lightning strike. We recommend combining whole-house protection with point-of-use surge protectors for sensitive electronics.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How much does whole house surge protection cost?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Professional installation of a quality whole-house surge protector typically ranges from $400-$800 including the device and labor. This is a small investment compared to the thousands of dollars in potential damage to appliances, HVAC systems, and electronics.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "Do I still need plug-in surge protectors?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Yes, we recommend a layered approach. Whole-house protection handles large surges at the panel, while point-of-use surge protectors provide additional protection for sensitive electronics like computers, TVs, and home theater equipment.",
+          },
+        },
+        {
+          "@type": "Question",
+          name: "How long does a surge protector last?",
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: "Quality whole-house surge protectors typically last 5-10 years or until they absorb a major surge. Many models have indicator lights showing when they need replacement. We install units with monitoring capabilities and provide guidance on maintenance.",
+          },
+        },
+      ],
+    }),
+  },
 }
 
 export default function SurgeProtectionPage() {
@@ -161,6 +212,84 @@ export default function SurgeProtectionPage() {
                   Call: (214) 690-1941
                 </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* FAQ Section */}
+        <section className="py-16 bg-black">
+          <div className="container mx-auto px-4">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold text-white mb-6">Frequently Asked Questions</h2>
+              <p className="text-lg text-gray-300 mb-8">
+                Expert answers about whole-house surge protection from our licensed electricians.
+              </p>
+              <div className="mt-8">
+                <Link href="/contactus">
+                  <Button size="lg" className="bg-[#22c55e] hover:bg-[#16a34a] text-black px-8 py-3">
+                    Get a Free Quote
+                  </Button>
+                </Link>
+              </div>
+            </div>
+
+            <div className="max-w-4xl mx-auto mt-16">
+              <Accordion type="single" collapsible className="space-y-4">
+                <AccordionItem value="item-1" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    How does whole house surge protection work?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    A whole-house surge protector installs at your electrical panel and diverts excess voltage to ground
+                    before it enters your home's wiring. It protects against surges from lightning strikes, utility grid
+                    fluctuations, and large appliances cycling on and off.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-2" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    Will a surge protector protect against lightning?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    Whole-house surge protectors provide significant protection against lightning-induced surges, but no
+                    device can guarantee 100% protection from a direct lightning strike. We recommend combining
+                    whole-house protection with point-of-use surge protectors for sensitive electronics.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-3" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    How much does whole house surge protection cost?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    Professional installation of a quality whole-house surge protector typically ranges from $400-$800
+                    including the device and labor. This is a small investment compared to the thousands of dollars in
+                    potential damage to appliances, HVAC systems, and electronics.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-4" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    Do I still need plug-in surge protectors?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    Yes, we recommend a layered approach. Whole-house protection handles large surges at the panel,
+                    while point-of-use surge protectors provide additional protection for sensitive electronics like
+                    computers, TVs, and home theater equipment.
+                  </AccordionContent>
+                </AccordionItem>
+
+                <AccordionItem value="item-5" className="bg-[#1a2332] rounded-lg border-gray-700">
+                  <AccordionTrigger className="text-xl font-bold text-white px-6 py-4 hover:no-underline">
+                    How long does a surge protector last?
+                  </AccordionTrigger>
+                  <AccordionContent className="text-gray-300 px-6 pb-4">
+                    Quality whole-house surge protectors typically last 5-10 years or until they absorb a major surge.
+                    Many models have indicator lights showing when they need replacement. We install units with
+                    monitoring capabilities and provide guidance on maintenance.
+                  </AccordionContent>
+                </AccordionItem>
+              </Accordion>
             </div>
           </div>
         </section>

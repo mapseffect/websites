@@ -61,8 +61,21 @@ export default function Footer() {
           </div>
         </div>
 
+        <div className="border-t border-white/10 mt-8 pt-6">
+          <div className="text-center space-y-3">
+            <p className="text-[#a3a3a3] text-sm">
+              <span className="text-[#22c55e] font-semibold">Tesla Wall Connector Installer</span> — Certified by Tesla
+              for installation of EV charging equipment
+            </p>
+            <p className="text-white text-sm font-semibold">
+              ABR Electric | Licensed Electrician | TECL License #27762
+            </p>
+            <p className="text-[#a3a3a3] text-sm">Serving McKinney, Allen, and Collin County, TX</p>
+          </div>
+        </div>
+
         {/* Copyright Bar */}
-        <div className="border-t border-white/10 mt-8 pt-8">
+        <div className="border-t border-white/10 mt-6 pt-6">
           <p className="text-center text-[#a3a3a3] text-sm">© 2025 ABR Electric. All rights reserved.</p>
         </div>
       </div>
