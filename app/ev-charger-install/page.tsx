@@ -350,6 +350,37 @@ export default function EVChargerInstallPage() {
           </div>
         </section>
 
+        {/* ChargePoint Certification Section */}
+        <section className="py-16 bg-black border-t border-[#22c55e]/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <div className="bg-gradient-to-br from-[#1a2332] to-[#0f1419] border border-[#22c55e]/30 rounded-lg p-8 md:p-12">
+                <div className="flex flex-col md:flex-row items-center gap-8">
+                  <div className="flex-shrink-0">
+                    <div className="bg-[#22c55e]/10 border-2 border-[#22c55e] rounded-full p-6">
+                      <CheckCircle className="w-16 h-16 text-[#22c55e]" />
+                    </div>
+                  </div>
+                  <div className="text-center md:text-left">
+                    <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">ChargePoint Certified Installers</h2>
+                    <p className="text-gray-300 text-lg leading-relaxed mb-4">
+                      ABR Electric is an official{" "}
+                      <span className="text-[#22c55e] font-semibold">ChargePoint Certified Installer</span>, ensuring
+                      your ChargePoint Home Flex and other EV charging systems are installed to the highest industry
+                      standards.
+                    </p>
+                    <p className="text-gray-400 leading-relaxed">
+                      Our certification means you get expert installation backed by ChargePoint's rigorous training
+                      program, giving you peace of mind that your charging station is installed safely, efficiently, and
+                      ready to power your electric vehicle for years to come.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-[#1a0a0a] via-black to-[#0a1a0a]">
           <div className="container mx-auto px-4">
