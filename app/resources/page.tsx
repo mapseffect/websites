@@ -164,7 +164,7 @@ const resourceCategories = [
     description: "Custom vehicle wraps, paint protection film, and design services for electric vehicles.",
     icon: "🚗",
     links: [
-      { name: "Vehicle Wrap Information", url: "#" },
+      { name: "Wrap4Car - Vehicle Wrap Specialists", url: "https://wrap4car.com/" },
       { name: "Custom Design Services", url: "#" },
     ],
   },
