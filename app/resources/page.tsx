@@ -159,6 +159,15 @@ const resourceCategories = [
       { name: "Door Installation Services", url: "#" },
     ],
   },
+  {
+    title: "EV Wrap Services",
+    description: "Custom vehicle wraps, paint protection film, and design services for electric vehicles.",
+    icon: "🚗",
+    links: [
+      { name: "Vehicle Wrap Information", url: "#" },
+      { name: "Custom Design Services", url: "#" },
+    ],
+  },
 ]
 
 export default function ResourcesPage() {
