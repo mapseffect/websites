@@ -25,7 +25,7 @@ export default function BlogListingPage() {
       category: "Garage Doors",
       readTime: "5 min read",
       image: "/garage-door-night.jpg",
-      date: "January 2025",
+      date: "October 26, 2025",
     },
     {
       title: "How Smart Thermostats Improve HVAC Efficiency",
@@ -35,7 +35,7 @@ export default function BlogListingPage() {
       category: "HVAC",
       readTime: "6 min read",
       image: "/smart-thermostat-hvac.jpg",
-      date: "January 2025",
+      date: "January 18, 2025",
     },
     {
       title: "What Plumbers and Electricians Need to Know About Water Heater Power",
@@ -45,7 +45,7 @@ export default function BlogListingPage() {
       category: "Plumbing",
       readTime: "7 min read",
       image: "/water-heater-electrical.jpg",
-      date: "January 2025",
+      date: "February 12, 2025",
     },
     {
       title: "Why Surge Protection Starts at the Roof",
@@ -55,7 +55,7 @@ export default function BlogListingPage() {
       category: "Roofing",
       readTime: "5 min read",
       image: "/lightning-roof-protection.jpg",
-      date: "January 2025",
+      date: "March 8, 2025",
     },
     {
       title: "Outdoor Lighting and Irrigation: Avoiding Power Shorts",
@@ -65,7 +65,7 @@ export default function BlogListingPage() {
       category: "Landscaping",
       readTime: "6 min read",
       image: "/outdoor-lighting-landscape.jpg",
-      date: "January 2025",
+      date: "April 22, 2025",
     },
     {
       title: "Rodents in Attics: The Hidden Threat to Electrical Wiring",
@@ -75,7 +75,7 @@ export default function BlogListingPage() {
       category: "Pest Control",
       readTime: "5 min read",
       image: "/attic-wiring-rodent-damage.jpg",
-      date: "January 2025",
+      date: "May 15, 2025",
     },
     {
       title: "Kitchen Remodel? Don't Forget Electrical Load Upgrades",
@@ -85,7 +85,7 @@ export default function BlogListingPage() {
       category: "Remodeling",
       readTime: "7 min read",
       image: "/kitchen-remodel-electrical.jpg",
-      date: "January 2025",
+      date: "June 9, 2025",
     },
     {
       title: "Powering Smart Homes: What Every Homeowner Should Know",
@@ -95,7 +95,7 @@ export default function BlogListingPage() {
       category: "Security Systems",
       readTime: "6 min read",
       image: "/smart-home-security-electrical.jpg",
-      date: "January 2025",
+      date: "July 19, 2025",
     },
     {
       title: "When to Call an Electrician vs. an Appliance Repair Tech",
@@ -105,7 +105,7 @@ export default function BlogListingPage() {
       category: "Appliance Repair",
       readTime: "5 min read",
       image: "/appliance-electrical-repair.jpg",
-      date: "January 2025",
+      date: "August 27, 2025",
     },
     {
       title: "GFCI Protection for Pools: The Silent Lifesaver",
@@ -115,7 +115,7 @@ export default function BlogListingPage() {
       category: "Pool Services",
       readTime: "6 min read",
       image: "/pool-gfci-electrical-safety.jpg",
-      date: "January 2025",
+      date: "September 14, 2025",
     },
   ]
 
