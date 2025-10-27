@@ -8,7 +8,7 @@ import Link from "next/link"
 export const metadata: Metadata = {
   title: "Home Service Resources | ABR Electric McKinney TX",
   description:
-    "ABR Electric provides trusted resources for homeowners in McKinney, Allen, and Collin County. Find reliable HVAC, plumbing, roofing, and other home service professionals.",
+    "Directory of home service categories for homeowners in McKinney, Allen, and Collin County. Find HVAC, plumbing, roofing, and other home service information.",
   alternates: {
     canonical: "https://abrelectric.com/resources",
   },
@@ -157,7 +157,7 @@ export default function ResourcesPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Home Service Resources",
-    description: "Trusted home service resources for homeowners in McKinney, Allen, and Collin County, Texas",
+    description: "Home service directory for homeowners in McKinney, Allen, and Collin County, Texas",
     provider: {
       "@type": "LocalBusiness",
       name: "ABR Electric",
@@ -179,9 +179,8 @@ export default function ResourcesPage() {
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Home Service Resources</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              ABR Electric is proud to connect homeowners in McKinney, Allen, and Collin County with trusted home
-              service professionals. Whether you need HVAC, plumbing, roofing, or any other home service, we've compiled
-              helpful resources to make your search easier.
+              A directory of home service categories for homeowners in McKinney, Allen, and Collin County. Browse
+              various service types to find information about HVAC, plumbing, roofing, and other home services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#22c55e] hover:bg-[#16a34a] text-white">
@@ -203,9 +202,10 @@ export default function ResourcesPage() {
         <section className="py-16 px-4">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold text-white mb-4">Find Trusted Home Service Professionals</h2>
+              <h2 className="text-3xl font-bold text-white mb-4">Home Service Categories</h2>
               <p className="text-gray-300 max-w-2xl mx-auto">
-                Browse our curated list of home service categories to find the right professional for your needs.
+                Browse home service categories to find information about different types of services available for your
+                home.
               </p>
             </div>
 
@@ -236,30 +236,31 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* Why Trust ABR Electric Section */}
         <section className="py-16 px-4 bg-[#1a2332]">
           <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl font-bold text-white mb-6">Why Trust ABR Electric's Recommendations?</h2>
+            <h2 className="text-3xl font-bold text-white mb-6">About This Directory</h2>
             <div className="grid md:grid-cols-3 gap-8 text-left">
               <div>
-                <div className="text-3xl mb-3">✓</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Local Expertise</h3>
+                <div className="text-3xl mb-3">📋</div>
+                <h3 className="text-xl font-semibold text-white mb-2">Service Categories</h3>
                 <p className="text-gray-300">
-                  We've served McKinney, Allen, and Collin County for years and know the local home service landscape.
+                  This directory lists common home service categories that homeowners may need for property maintenance
+                  and repairs.
                 </p>
               </div>
               <div>
-                <div className="text-3xl mb-3">✓</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Quality Standards</h3>
+                <div className="text-3xl mb-3">🏘️</div>
+                <h3 className="text-xl font-semibold text-white mb-2">Local Focus</h3>
                 <p className="text-gray-300">
-                  We only recommend professionals who meet our high standards for quality and customer service.
+                  Information organized for homeowners in McKinney, Allen, Frisco, Plano, and surrounding Collin County
+                  areas.
                 </p>
               </div>
               <div>
-                <div className="text-3xl mb-3">✓</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Homeowner First</h3>
+                <div className="text-3xl mb-3">🔍</div>
+                <h3 className="text-xl font-semibold text-white mb-2">Service Information</h3>
                 <p className="text-gray-300">
-                  Our goal is to help homeowners find reliable services to maintain and improve their homes.
+                  Browse categories to learn about different types of home services and what they typically include.
                 </p>
               </div>
             </div>
@@ -271,8 +272,8 @@ export default function ResourcesPage() {
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Need Electrical Services?</h2>
             <p className="text-xl text-gray-300 mb-8">
-              ABR Electric provides expert electrical services throughout McKinney, Allen, Frisco, Plano, and all of
-              Collin County.
+              ABR Electric provides electrical services throughout McKinney, Allen, Frisco, Plano, and all of Collin
+              County.
             </p>
             <Button asChild size="lg" className="bg-[#22c55e] hover:bg-[#16a34a] text-white">
               <Link href="/contactus">Get Your Free Quote Today</Link>
