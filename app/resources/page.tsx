@@ -106,6 +106,15 @@ const resourceCategories = [
     ],
   },
   {
+    title: "Remodeling & Renovation",
+    description: "Kitchen remodeling, bathroom renovation, and home improvement services.",
+    icon: "🏗️",
+    links: [
+      { name: "LA Top Renovation - Los Angeles, CA", url: "https://latoprenovation.com/" },
+      { name: "Kitchen Remodeling Services", url: "#" },
+    ],
+  },
+  {
     title: "Security Systems",
     description: "Home security system installation, monitoring, and smart home integration.",
     icon: "🔒",
