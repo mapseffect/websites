@@ -6,9 +6,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Home Service Resources | ABR Electric McKinney TX",
+  title: "Home Service Resources | ABR Electric",
   description:
-    "Directory of home service categories for homeowners in McKinney, Allen, and Collin County. Find HVAC, plumbing, roofing, and other home service information.",
+    "Directory of home service categories for homeowners. Find HVAC, plumbing, roofing, and other home service information.",
   alternates: {
     canonical: "https://abrelectric.com/resources",
   },
@@ -20,7 +20,7 @@ const resourceCategories = [
     description: "Heating, cooling, and air conditioning installation, repair, and maintenance.",
     icon: "❄️",
     links: [
-      { name: "Find Local HVAC Contractors", url: "#" },
+      { name: "Find HVAC Contractors", url: "#" },
       { name: "HVAC Maintenance Tips", url: "#" },
     ],
   },
@@ -29,7 +29,7 @@ const resourceCategories = [
     description: "Professional plumbers for repairs, installations, drain cleaning, and water heaters.",
     icon: "🚰",
     links: [
-      { name: "Find Local Plumbers", url: "#" },
+      { name: "Find Plumbers", url: "#" },
       { name: "Emergency Plumbing Services", url: "#" },
     ],
   },
@@ -38,7 +38,7 @@ const resourceCategories = [
     description: "Roof repair, replacement, inspection, and maintenance for residential properties.",
     icon: "🏠",
     links: [
-      { name: "Find Local Roofers", url: "#" },
+      { name: "Find Roofers", url: "#" },
       { name: "Roof Inspection Services", url: "#" },
     ],
   },
@@ -47,7 +47,7 @@ const resourceCategories = [
     description: "Lawn maintenance, tree service, irrigation, and landscape design.",
     icon: "🌳",
     links: [
-      { name: "Find Local Landscapers", url: "#" },
+      { name: "Find Landscapers", url: "#" },
       { name: "Lawn Care Services", url: "#" },
     ],
   },
@@ -56,7 +56,7 @@ const resourceCategories = [
     description: "Extermination, prevention, and inspection services for all types of pests.",
     icon: "🐛",
     links: [
-      { name: "Find Local Pest Control", url: "#" },
+      { name: "Find Pest Control", url: "#" },
       { name: "Termite Inspection Services", url: "#" },
     ],
   },
@@ -65,7 +65,7 @@ const resourceCategories = [
     description: "House cleaning, carpet cleaning, window cleaning, and deep cleaning services.",
     icon: "🧹",
     links: [
-      { name: "Find Local Cleaners", url: "#" },
+      { name: "Find Cleaners", url: "#" },
       { name: "Carpet Cleaning Services", url: "#" },
     ],
   },
@@ -74,7 +74,7 @@ const resourceCategories = [
     description: "General repairs, maintenance, and home improvement projects.",
     icon: "🔧",
     links: [
-      { name: "Find Local Handyman", url: "#" },
+      { name: "Find Handyman", url: "#" },
       { name: "Home Repair Services", url: "#" },
     ],
   },
@@ -83,7 +83,7 @@ const resourceCategories = [
     description: "Interior and exterior painting, staining, and finishing services.",
     icon: "🎨",
     links: [
-      { name: "Find Local Painters", url: "#" },
+      { name: "Find Painters", url: "#" },
       { name: "Interior Painting Services", url: "#" },
     ],
   },
@@ -92,7 +92,7 @@ const resourceCategories = [
     description: "Flooring installation, refinishing, repair for hardwood, tile, and carpet.",
     icon: "🪵",
     links: [
-      { name: "Find Local Flooring Contractors", url: "#" },
+      { name: "Find Flooring Contractors", url: "#" },
       { name: "Hardwood Floor Refinishing", url: "#" },
     ],
   },
@@ -101,7 +101,7 @@ const resourceCategories = [
     description: "Garage door repair, installation, and maintenance services.",
     icon: "🚪",
     links: [
-      { name: "Find Local Garage Door Services", url: "#" },
+      { name: "Find Garage Door Services", url: "#" },
       { name: "Garage Door Repair", url: "#" },
     ],
   },
@@ -110,7 +110,7 @@ const resourceCategories = [
     description: "Home security system installation, monitoring, and smart home integration.",
     icon: "🔒",
     links: [
-      { name: "Find Local Security Companies", url: "#" },
+      { name: "Find Security Companies", url: "#" },
       { name: "Smart Home Security", url: "#" },
     ],
   },
@@ -119,7 +119,7 @@ const resourceCategories = [
     description: "Pool maintenance, repair, cleaning, and equipment installation.",
     icon: "🏊",
     links: [
-      { name: "Find Local Pool Services", url: "#" },
+      { name: "Find Pool Services", url: "#" },
       { name: "Pool Maintenance Services", url: "#" },
     ],
   },
@@ -128,7 +128,7 @@ const resourceCategories = [
     description: "Repair services for refrigerators, washers, dryers, and other appliances.",
     icon: "🔌",
     links: [
-      { name: "Find Local Appliance Repair", url: "#" },
+      { name: "Find Appliance Repair", url: "#" },
       { name: "Refrigerator Repair Services", url: "#" },
     ],
   },
@@ -137,7 +137,7 @@ const resourceCategories = [
     description: "Lock installation, repair, rekeying, and emergency lockout services.",
     icon: "🔑",
     links: [
-      { name: "Find Local Locksmiths", url: "#" },
+      { name: "Find Locksmiths", url: "#" },
       { name: "Emergency Locksmith Services", url: "#" },
     ],
   },
@@ -146,7 +146,7 @@ const resourceCategories = [
     description: "Window and door installation, repair, and replacement services.",
     icon: "🪟",
     links: [
-      { name: "Find Local Window Contractors", url: "#" },
+      { name: "Find Window Contractors", url: "#" },
       { name: "Door Installation Services", url: "#" },
     ],
   },
@@ -157,7 +157,7 @@ export default function ResourcesPage() {
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     name: "Home Service Resources",
-    description: "Home service directory for homeowners in McKinney, Allen, and Collin County, Texas",
+    description: "Home service directory for homeowners",
     provider: {
       "@type": "LocalBusiness",
       name: "ABR Electric",
@@ -179,8 +179,8 @@ export default function ResourcesPage() {
           <div className="max-w-7xl mx-auto text-center">
             <h1 className="text-4xl md:text-5xl font-bold text-white mb-6">Home Service Resources</h1>
             <p className="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
-              A directory of home service categories for homeowners in McKinney, Allen, and Collin County. Browse
-              various service types to find information about HVAC, plumbing, roofing, and other home services.
+              A directory of home service categories for homeowners. Browse various service types to find information
+              about HVAC, plumbing, roofing, and other home services.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button asChild size="lg" className="bg-[#22c55e] hover:bg-[#16a34a] text-white">
@@ -250,10 +250,9 @@ export default function ResourcesPage() {
               </div>
               <div>
                 <div className="text-3xl mb-3">🏘️</div>
-                <h3 className="text-xl font-semibold text-white mb-2">Local Focus</h3>
+                <h3 className="text-xl font-semibold text-white mb-2">Homeowner Resource</h3>
                 <p className="text-gray-300">
-                  Information organized for homeowners in McKinney, Allen, Frisco, Plano, and surrounding Collin County
-                  areas.
+                  Information organized to help homeowners find and understand different types of home services.
                 </p>
               </div>
               <div>
@@ -267,14 +266,10 @@ export default function ResourcesPage() {
           </div>
         </section>
 
-        {/* CTA Section */}
         <section className="py-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-3xl font-bold text-white mb-4">Need Electrical Services?</h2>
-            <p className="text-xl text-gray-300 mb-8">
-              ABR Electric provides electrical services throughout McKinney, Allen, Frisco, Plano, and all of Collin
-              County.
-            </p>
+            <p className="text-xl text-gray-300 mb-8">ABR Electric provides professional electrical services.</p>
             <Button asChild size="lg" className="bg-[#22c55e] hover:bg-[#16a34a] text-white">
               <Link href="/contactus">Get Your Free Quote Today</Link>
             </Button>
