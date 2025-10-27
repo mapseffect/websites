@@ -31,16 +31,23 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Financing */}
+          {/* Column 3: Updates & Resources */}
           <div>
-            <h3 className="text-[#22c55e] font-bold mb-4">Financing</h3>
+            <h3 className="text-[#22c55e] font-bold mb-4">Updates & Resources</h3>
             <ul className="space-y-2 text-[#a3a3a3] text-sm">
-              <li>Flexible Payment Options</li>
-              <li>Generator & EV Charger Financing</li>
-              <li>Panel Upgrade Financing</li>
               <li>
-                <Link href="/hearth" className="text-[#22c55e] hover:underline">
-                  Learn More
+                <Link href="/blog" className="hover:text-[#22c55e] transition-colors">
+                  Updates
+                </Link>
+              </li>
+              <li>
+                <Link href="/resources" className="hover:text-[#22c55e] transition-colors">
+                  Resources
+                </Link>
+              </li>
+              <li>
+                <Link href="/hearth" className="hover:text-[#22c55e] transition-colors">
+                  Financing Options
                 </Link>
               </li>
             </ul>
