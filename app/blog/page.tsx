@@ -22,9 +22,99 @@ export default function BlogListingPage() {
       excerpt:
         "Learn about electrical requirements for garage door openers, when you need permits, and why dedicated circuits matter for safety. Discover best practices for ensuring your garage door opener has the power it needs.",
       slug: "is-your-garage-door-opener-on-a-shared-circuit",
-      category: "Electrical Safety",
+      category: "Garage Doors",
       readTime: "5 min read",
       image: "/garage-door-night.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "How Smart Thermostats Improve HVAC Efficiency",
+      excerpt:
+        "Discover how smart thermostats can reduce energy costs and improve comfort. Learn about thermostat wiring, circuit load requirements, and proper electrical connections for optimal HVAC performance.",
+      slug: "how-smart-thermostats-improve-hvac-efficiency",
+      category: "HVAC",
+      readTime: "6 min read",
+      image: "/smart-thermostat-hvac.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "What Plumbers and Electricians Need to Know About Water Heater Power",
+      excerpt:
+        "Understanding 240V connections for water heaters is crucial for both plumbers and electricians. Learn about electrical requirements, circuit sizing, and safety considerations for water heater installations.",
+      slug: "water-heater-power-requirements",
+      category: "Plumbing",
+      readTime: "7 min read",
+      image: "/water-heater-electrical.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "Why Surge Protection Starts at the Roof",
+      excerpt:
+        "Lightning strikes can devastate your home's electrical system. Learn how whole-house surge protection and proper grounding at the roof level can prevent thousands in damage and keep your family safe.",
+      slug: "surge-protection-starts-at-roof",
+      category: "Roofing",
+      readTime: "5 min read",
+      image: "/lightning-roof-protection.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "Outdoor Lighting and Irrigation: Avoiding Power Shorts",
+      excerpt:
+        "Outdoor electrical systems face unique challenges from moisture and weather. Discover how to safely power landscape lighting and irrigation systems while preventing dangerous electrical shorts.",
+      slug: "outdoor-lighting-irrigation-safety",
+      category: "Landscaping",
+      readTime: "6 min read",
+      image: "/outdoor-lighting-landscape.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "Rodents in Attics: The Hidden Threat to Electrical Wiring",
+      excerpt:
+        "Rodents chewing through electrical wiring is a serious fire hazard. Learn how to identify damaged wiring, prevent pest access, and protect your home from electrical fires caused by rodent damage.",
+      slug: "rodents-electrical-wiring-danger",
+      category: "Pest Control",
+      readTime: "5 min read",
+      image: "/attic-wiring-rodent-damage.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "Kitchen Remodel? Don't Forget Electrical Load Upgrades",
+      excerpt:
+        "Modern kitchens demand more power than ever. Learn about circuit requirements for new appliances, electrical code compliance, and when you need a panel upgrade during your kitchen renovation.",
+      slug: "kitchen-remodel-electrical-upgrades",
+      category: "Remodeling",
+      readTime: "7 min read",
+      image: "/kitchen-remodel-electrical.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "Powering Smart Homes: What Every Homeowner Should Know",
+      excerpt:
+        "Smart home technology requires reliable electrical infrastructure. Explore power requirements for security systems, smart devices, and how to integrate electrical controls for a seamless smart home experience.",
+      slug: "powering-smart-homes-guide",
+      category: "Security Systems",
+      readTime: "6 min read",
+      image: "/smart-home-security-electrical.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "When to Call an Electrician vs. an Appliance Repair Tech",
+      excerpt:
+        "Is it an electrical problem or an appliance issue? Learn the clear boundaries between electrical and appliance repairs, when to call each professional, and how to avoid costly mistakes.",
+      slug: "electrician-vs-appliance-repair",
+      category: "Appliance Repair",
+      readTime: "5 min read",
+      image: "/appliance-electrical-repair.jpg",
+      date: "January 2025",
+    },
+    {
+      title: "GFCI Protection for Pools: The Silent Lifesaver",
+      excerpt:
+        "Pool electrical safety is non-negotiable. Discover how GFCI protection prevents electrocution, pool wiring requirements, and essential safety measures every pool owner must know.",
+      slug: "gfci-protection-pools-safety",
+      category: "Pool Services",
+      readTime: "6 min read",
+      image: "/pool-gfci-electrical-safety.jpg",
       date: "January 2025",
     },
   ]
