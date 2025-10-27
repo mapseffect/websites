@@ -69,15 +69,14 @@ export default function ThankYouPage() {
           <p className="text-gray-300 leading-relaxed mb-4">
             ABR Electric is a veteran-owned electrical company proudly serving Collin County, Texas. We specialize in
             residential and commercial electrical services including panel upgrades, EV charger installation, generator
-            installation, lighting, and emergency electrical repairs. Our team of licensed electricians is committed to
-            providing safe, reliable, and code-compliant electrical work with upfront pricing and exceptional customer
-            service.
+            installation, and lighting. Our team of licensed electricians is committed to providing safe, reliable, and
+            code-compliant electrical work with upfront pricing and exceptional customer service.
           </p>
           <p className="text-gray-300 leading-relaxed">
             As a locally owned business based in McKinney, we understand the unique electrical needs of North Texas
-            homes and businesses. We're available for same-day service and emergency calls, and we stand behind our work
-            with comprehensive warranties. Whether you need a simple outlet replacement or a complete electrical system
-            upgrade, ABR Electric delivers professional results you can trust.
+            homes and businesses. We're available for same-day service, and we stand behind our work with comprehensive
+            warranties. Whether you need a simple outlet replacement or a complete electrical system upgrade, ABR
+            Electric delivers professional results you can trust.
           </p>
         </div>
 
@@ -89,7 +88,7 @@ export default function ThankYouPage() {
           >
             (214) 690-1941
           </a>
-          <p className="text-gray-400 mt-2">Available for emergency electrical services</p>
+          <p className="text-gray-400 mt-2">Available for same-day electrical services</p>
         </div>
 
         <div className="flex justify-center">

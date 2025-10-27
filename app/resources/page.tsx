@@ -30,7 +30,7 @@ const resourceCategories = [
     icon: "🚰",
     links: [
       { name: "Find Plumbers", url: "#" },
-      { name: "Emergency Plumbing Services", url: "#" },
+      { name: "Plumbing Repair Services", url: "#" },
     ],
   },
   {
@@ -143,11 +143,11 @@ const resourceCategories = [
   },
   {
     title: "Locksmith Services",
-    description: "Lock installation, repair, rekeying, and emergency lockout services.",
+    description: "Lock installation, repair, rekeying, and lockout services.",
     icon: "🔑",
     links: [
       { name: "Find Locksmiths", url: "#" },
-      { name: "Emergency Locksmith Services", url: "#" },
+      { name: "Locksmith Services", url: "#" },
     ],
   },
   {

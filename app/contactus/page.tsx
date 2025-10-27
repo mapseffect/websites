@@ -89,7 +89,6 @@ export default function ContactPage() {
                       <p className="text-gray-300">Monday - Friday: 8:00 AM - 6:00 PM</p>
                       <p className="text-gray-300">Saturday: 9:00 AM - 4:00 PM</p>
                       <p className="text-gray-300">Sunday: Closed</p>
-                      <p className="text-[#22c55e] mt-2">Emergency services available 24/7</p>
                     </div>
                   </div>
                 </div>
@@ -119,9 +118,7 @@ export default function ContactPage() {
                       <Zap className="w-5 h-5 text-[#22c55e] mt-1 flex-shrink-0" />
                       <div>
                         <h4 className="text-white font-semibold mb-1">Fast Response Time</h4>
-                        <p className="text-gray-400 text-sm">
-                          Same-day service available for most electrical needs. Emergency services 24/7.
-                        </p>
+                        <p className="text-gray-400 text-sm">Same-day service available for most electrical needs.</p>
                       </div>
                     </div>
                   </div>

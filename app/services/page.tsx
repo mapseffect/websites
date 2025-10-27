@@ -40,7 +40,7 @@ export default function ServicesPage() {
     },
     {
       title: "Generator Installation",
-      description: "Whole-home backup generators for emergency power protection.",
+      description: "Whole-home backup generators for reliable power protection.",
       icon: "🔋",
       href: "/generators",
     },

@@ -29,7 +29,7 @@ export default function ServicesSection() {
     {
       icon: "🔋",
       title: "Generator Installation",
-      description: "Certified Generac or Kohler whole-home backup generator installations.",
+      description: "Certified Generac whole-home backup generator installations.",
       href: "/generators",
     },
     {

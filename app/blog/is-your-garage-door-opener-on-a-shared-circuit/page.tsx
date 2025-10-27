@@ -232,7 +232,7 @@ export default function GarageDoorCircuitBlogPost() {
                           trust for expert garage door and gate installation, repair, and dependable service.
                         </p>
                         <div className="flex flex-wrap items-center gap-4 text-sm">
-                          <span className="text-[#00ff9d] font-semibold">Same-Day & 24/7 Emergency Service</span>
+                          <span className="text-[#00ff9d] font-semibold">Same-Day & 24/7 Service</span>
                           <a
                             href="tel:2817672482"
                             className="inline-flex items-center gap-2 text-white hover:text-[#00ff9d] transition-colors"
