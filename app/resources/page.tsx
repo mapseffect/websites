@@ -101,7 +101,7 @@ const resourceCategories = [
     description: "Garage door repair, installation, and maintenance services.",
     icon: "🚪",
     links: [
-      { name: "Find Garage Door Services", url: "#" },
+      { name: "Ranger Garage Door Repair - Houston, TX", url: "https://rangergaragedoor.com/" },
       { name: "Garage Door Repair", url: "#" },
     ],
   },
