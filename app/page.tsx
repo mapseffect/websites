@@ -24,7 +24,7 @@ const structuredData = {
   "@graph": [
     {
       "@type": ["LocalBusiness", "Electrician"],
-      "@id": "https://abrelectric.com/#business",
+      "@id": "https://electriciannearme.netlify.app/",
       name: "ABR Electric",
       image: "https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/a1da6d44-4bac-4a24-c457-54105bb75b00/public",
       url: "https://abrelectric.com",
@@ -285,13 +285,12 @@ const structuredData = {
         "https://www.instagram.com/abrelectric.dfw/",
         "https://www.angi.com/companylist/us/tx/mckinney/abr-electric-reviews-6777108.htm",
         "https://www.indeed.com/cmp/Abr-Electric/reviews?fcountry=US&floc=McKinney%2C+TX",
-        "https://vvif.com/abrelectric",
         "https://www.google.com/maps/place/ABR+Electric",
       ],
     },
     {
       "@type": "Organization",
-      "@id": "https://abrelectric.com/#organization",
+      "@id": "https://electriciannearme.netlify.app/",
       name: "ABR Electric",
       url: "https://abrelectric.com",
       logo: "https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/420f5ec1-2956-4da7-9632-cfd2b31f4f00/public",
@@ -307,7 +306,7 @@ const structuredData = {
       "@type": "Service",
       serviceType: "Electrical Services",
       provider: {
-        "@id": "https://abrelectric.com/#business",
+        "@id": "https://electriciannearme.netlify.app/",
       },
       areaServed: {
         "@type": "State",

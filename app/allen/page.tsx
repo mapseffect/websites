@@ -153,7 +153,6 @@ export const metadata: Metadata = {
             "https://www.instagram.com/abrelectric.dfw/",
             "https://www.angi.com/companylist/us/tx/mckinney/abr-electric-reviews-6777108.htm",
             "https://www.indeed.com/cmp/Abr-Electric/reviews?fcountry=US&floc=McKinney%2C+TX",
-            "https://vvif.com/abrelectric",
             "https://www.google.com/maps/place/ABR+Electric",
           ],
         },
