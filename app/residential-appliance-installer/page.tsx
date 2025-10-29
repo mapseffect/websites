@@ -1,5 +1,6 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
+import Script from "next/script"
 import type { Metadata } from "next"
 import { Shield, Award, BookOpen, CheckCircle } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
@@ -45,6 +46,22 @@ export default function ResidentialApplianceInstallerPage() {
         acceptedAnswer: {
           "@type": "Answer",
           text: "Submit a completed application to the Texas Department of Licensing and Regulation (TDLR) along with the required fees. Once approved, PSI will email you instructions to schedule your exam at an approved testing center. After passing the exam with 70% or higher, TDLR will issue your RAIL license. The license must be renewed periodically according to TDLR requirements.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "Can I work independently with a RAIL license?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "Yes, RAIL license holders can work independently to install residential appliances. However, the scope is limited to appliance installations covered under NEC Article 422. You cannot perform general electrical work, install new circuits, or work on service panels without higher-level licenses (Journeyman or Master Electrician). Many RAIL professionals work for appliance retailers, property management companies, or start their own appliance installation businesses.",
+        },
+      },
+      {
+        "@type": "Question",
+        name: "How long does it take to get a RAIL license?",
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: "The timeline varies based on your preparation and TDLR processing times. Most candidates spend 2-4 weeks studying the NEC before taking the exam. After submitting your application to TDLR, approval typically takes 2-3 weeks. Once approved, you can schedule your exam with PSI and take it within days. After passing, TDLR issues your license within 1-2 weeks. Total time from start to licensed is usually 4-8 weeks.",
         },
       },
     ],
@@ -325,8 +342,33 @@ export default function ResidentialApplianceInstallerPage() {
             </div>
           </div>
         </section>
+
+        {/* Form Section */}
+        <section className="py-12 bg-gradient-to-br from-[#0a1a0a] via-black to-[#1a0a0a]">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-3xl font-bold text-white mb-6 text-center">Enroll in RAIL Course</h2>
+              <p className="text-gray-300 text-center mb-8">
+                Start your electrical career today. Fill out the form below to enroll in our RAIL Course. Call (214)
+                690-1941 for course details and availability.
+              </p>
+              <div className="bg-[#1a2332] rounded-lg p-8 border border-white/10">
+                <iframe
+                  id="formnx-11gi40-peiz9bbg"
+                  src="https://fill.formnx.com/f/abr-electric-s-rail-and-residential-wireman-course-11gi40?iframe=true"
+                  frameBorder="0"
+                  style={{ width: "1px", minWidth: "100%", border: "none" }}
+                  className="min-h-[600px]"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
+      {/* Script tags for iframe functionality */}
+      <Script src="https://formnx.com/js/iframeResizer.js" strategy="lazyOnload" />
+      <Script src="https://formnx.com/js/widget.js" strategy="lazyOnload" />
     </>
   )
 }
