@@ -49,7 +49,7 @@ export default function HeroSection() {
               <div className="flex items-start gap-3">
                 <div className="text-[#22c55e] text-xl mt-1">✓</div>
                 <div className="text-white">
-                  <span className="font-semibold">Licensed & Insured</span> - Fully certified electricians
+                  <span className="font-semibold">Licensed & Insured</span> - TECL License #27762
                 </div>
               </div>
               <div className="flex items-start gap-3">
