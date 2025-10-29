@@ -1,4 +1,5 @@
 import Link from "next/link"
+import Image from "next/image"
 
 export default function ServicesSection() {
   const services = [
@@ -61,7 +62,19 @@ export default function ServicesSection() {
   return (
     <section className="py-16 bg-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">Electrical Services We Offer</h2>
+        <div className="flex flex-col items-center mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">
+            Local Electrician Services in McKinney
+          </h2>
+          <Image
+            src="https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/420f5ec1-2956-4da7-9632-cfd2b31f4f00/public"
+            alt="ABR Electric Logo"
+            width={200}
+            height={80}
+            className="mb-3"
+          />
+          <p className="text-gray-300 text-center text-lg">ABR Electric Authorized Generac Dealer</p>
+        </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {services.map((service, index) => (

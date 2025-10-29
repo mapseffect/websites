@@ -16,11 +16,7 @@ export default function HeroSection() {
           <div className="space-y-8">
             <div>
               <h1 className="text-2xl md:text-3xl lg:text-[2.625rem] font-bold text-white mb-4 leading-tight">
-                ABR Electric | McKinney Electricians
-                <br />
-                <span className="block mt-2">
-                  Serving <span className="text-[#22c55e]">Allen, Frisco & Plano</span>
-                </span>
+                Electrician in McKinney, TX | ABR Electric | Licensed
               </h1>
             </div>
 

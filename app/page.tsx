@@ -11,9 +11,9 @@ import Footer from "@/components/footer"
 import PermitsSection from "@/components/permits-section"
 
 export const metadata: Metadata = {
-  title: "ABR Electric | McKinney Electricians Serving Allen, Frisco & Plano",
+  title: "Electrician in McKinney, TX | ABR Electric | Licensed",
   description:
-    "ABR Electric is your trusted local business for licensed & insured electricians serving McKinney, Allen, Frisco & Plano. TECL #27762. 5-star reviews. Call (214) 690-1941 for a free quote.",
+    "Licensed electricians in McKinney, Allen, Frisco & Plano. 5-star reviews. Tesla certified. Call (214) 690-1941 for a free quote today.",
   alternates: {
     canonical: "https://abrelectric.com",
   },

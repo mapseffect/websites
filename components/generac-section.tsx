@@ -18,7 +18,7 @@ export default function GeneracSection() {
         <div className="max-w-6xl mx-auto">
           {/* Heading and Description */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">ABR Electric Authorized Generac Dealers</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Generator Installation & Backup Power</h2>
             <p className="text-xl text-gray-200 max-w-3xl mx-auto leading-relaxed">
               Keep your home powered during outages with professional generator installation and maintenance services.
             </p>

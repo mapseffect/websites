@@ -19,7 +19,9 @@ export default function PermitsSection() {
       {/* Content */}
       <div className="container relative z-10 mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Permits & Inspections in Collin County, TX</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
+            Electrical Services with Permits & Inspections
+          </h2>
           <p className="text-lg text-gray-200 max-w-4xl mx-auto leading-relaxed">
             Adding a generator, upgrading your electrical panel, or installing EV charging in Collin County? ABR
             Electric handles the paperwork, pulls permits, and schedules inspections across McKinney, Plano, Frisco,

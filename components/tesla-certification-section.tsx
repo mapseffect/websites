@@ -12,7 +12,7 @@ export default function TeslaCertificationSection() {
           </div>
 
           <div className="text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Certified Tesla Installers</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">EV Charger Installation Experts</h2>
             <p className="text-gray-400 text-lg mb-6">Official Tesla expertise — installed the right way</p>
 
             <div className="flex justify-center md:justify-start">
