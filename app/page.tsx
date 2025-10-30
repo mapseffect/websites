@@ -285,7 +285,7 @@ const structuredData = {
         "https://www.instagram.com/abrelectric.dfw/",
         "https://www.angi.com/companylist/us/tx/mckinney/abr-electric-reviews-6777108.htm",
         "https://www.indeed.com/cmp/Abr-Electric/reviews?fcountry=US&floc=McKinney%2C+TX",
-        "https://www.google.com/maps/place/ABR+Electric",
+        "https://maps.app.goo.gl/vAGZYkpvNY6spvrD7",
       ],
     },
     {
@@ -484,7 +484,7 @@ const structuredData = {
         },
         {
           "@type": "Question",
-          name: "Can you add outlets in closets, garages, or utility spaces?",
+          name: "Can you safely add outlets in closets, garages, or utility spaces?",
           acceptedAnswer: {
             "@type": "Answer",
             text: "Yes. ABR Electric safely adds outlets where needed, including GFCI-protected outlets in required areas. Please fill out our form with details and photos.",
