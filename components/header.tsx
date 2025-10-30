@@ -4,7 +4,7 @@ import { useState } from "react"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
 
-export function Header() {
+export default function Header() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const navItems = [
@@ -12,7 +12,7 @@ export function Header() {
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
     { name: "Workshops", href: "/workshops" },
-    { name: "Contact Us", href: "/contactus" },
+    { name: "Contact Us", href: "/contact" },
   ]
 
   return (
@@ -91,5 +91,3 @@ export function Header() {
     </header>
   )
 }
-
-export default Header

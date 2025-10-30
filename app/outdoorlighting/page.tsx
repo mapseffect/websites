@@ -1,79 +1,7 @@
-import type { Metadata } from "next"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import ServiceAreasSection from "@/components/service-areas-section"
 import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-
-export const metadata: Metadata = {
-  title: "ABR Electric Outdoor Lighting Installation Collin County",
-  description:
-    "Professional outdoor and landscape lighting installation in Collin County. ABR Electric installs path lighting, security lighting, LED fixtures, and motion-activated systems. Licensed electrician serving McKinney, Allen, Frisco. Call 214-690-1941.",
-  other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Do you install outdoor and landscape lighting?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. ABR Electric installs low-voltage and line-voltage lighting for pathways, gardens, patios, and architectural features. Please fill out our form, send photos if possible, and contact support@abrelectric.com or 214-690-1941.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can you install motion-activated security lighting?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. We install motion-sensor and dusk-to-dawn lights around driveways, garages, and backyards for added safety. Fill out our form with the areas you'd like covered, then call 214-690-1941.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do you offer energy-efficient LED options?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. We install LED fixtures designed for outdoor use that save energy and reduce maintenance. Email support@abrelectric.com or call 214-690-1941 for recommendations.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can you upgrade my existing outdoor lighting system?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. We replace outdated or faulty fixtures, upgrade transformers, and convert older systems to LED. Send photos of your current setup using our form for an accurate estimate.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Is outdoor lighting safe to install near gardens or pools?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. We follow code requirements for weatherproof and GFCI-protected circuits. ABR Electric ensures all outdoor lighting is safe in wet locations. Contact us for a site evaluation.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do you provide design advice for landscape lighting?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. We help highlight architectural features, trees, and pathways to balance safety with aesthetics. Please fill out our form and upload photos of your yard for tailored suggestions.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How much does outdoor or security lighting installation cost?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Cost depends on the number of fixtures, wiring length, and whether trenching or new circuits are required. For an accurate quote, fill out our form, send pictures, and call 214-690-1941.",
-          },
-        },
-      ],
-    }),
-  },
-}
 
 export default function OutdoorLightingPage() {
   const faqs = [
@@ -254,7 +182,7 @@ export default function OutdoorLightingPage() {
               <div className="mt-8 bg-[#111] border border-gray-800 rounded-lg p-6 text-center">
                 <p className="text-gray-300">
                   <strong className="text-white">Next step:</strong>{" "}
-                  <Link href="/contactus" className="text-[#22c55e] hover:text-[#16a34a] font-semibold">
+                  <Link href="/contact" className="text-[#22c55e] hover:text-[#16a34a] font-semibold">
                     Fill out our form
                   </Link>{" "}
                   and upload photos if possible. Questions? Email{" "}
@@ -285,7 +213,7 @@ export default function OutdoorLightingPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/contactus"
+                  href="/contact"
                   className="bg-[#22c55e] text-black px-8 py-4 rounded-lg font-semibold hover:bg-[#16a34a] transition-colors"
                 >
                   Get Free Quote
@@ -300,9 +228,6 @@ export default function OutdoorLightingPage() {
             </div>
           </div>
         </section>
-
-        {/* Service Areas Section */}
-        <ServiceAreasSection />
       </main>
       <Footer />
     </>

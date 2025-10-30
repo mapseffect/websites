@@ -1,79 +1,8 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import ServiceAreasSection from "@/components/service-areas-section"
 import Link from "next/link"
 import { CheckCircle2 } from "lucide-react"
 import GeneratorFAQ from "@/components/generator-faq"
-
-export const metadata = {
-  title: "ABR Electric Generator Installation Collin County | Authorized Generac Dealer",
-  description:
-    "Authorized Generac dealer in Collin County. Professional whole-house generator installation with automatic backup power, permits, and expert setup. Call (214) 690-1941 for reliable backup power solutions.",
-  other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Do you install Generac generators for residential homes?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. ABR Electric installs Generac and other standby generators for homes of all sizes. Please fill out our form and include home size and key loads, then contact support@abrelectric.com or 214-690-1941.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can you provide a complete install price and a labor-only price?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. Full install covers generator, transfer switch, wiring, coordination for gas. Labor-only applies if you already own equipment. Please fill out our form for a precise quote, then call 214-690-1941.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can you help relocate my generator during a remodel or yard project?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. ABR Electric disconnects, moves, and reinstalls to code. Upload photos if possible, then contact support@abrelectric.com or 214-690-1941.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What size generator do I need?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Depends on square footage and priority loads (HVAC, fridge, medical, sump). ABR Electric sizes after a load review. Please fill out our form with key appliances and send panel photos.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can you install the transfer switch and surge protection?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. ABR Electric installs automatic transfer switches and whole-home surge protection as part of the project. Email support@abrelectric.com or call 214-690-1941.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Do you install generator inlets for portable backup?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. ABR Electric installs 240 V inlets and safe interlocks to your panel. Please fill out our form for pricing.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can you connect propane or natural gas to the generator?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes. ABR Electric coordinates fuel source and clearances. Share gas meter/tank details in the form, then call 214-690-1941.",
-          },
-        },
-      ],
-    }),
-  },
-}
 
 export default function GeneratorsPage() {
   const advantages = [
@@ -245,9 +174,6 @@ export default function GeneratorsPage() {
             </div>
           </div>
         </section>
-
-        {/* Service Areas Section */}
-        <ServiceAreasSection />
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-[#1a0a0a] via-black to-[#0a1a0a]">

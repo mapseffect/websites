@@ -1,6 +1,6 @@
 export default function TeslaCertificationSection() {
   return (
-    <section className="bg-black py-16 border-t-2 border-b-2 border-[#22c55e]/30">
+    <section className="bg-black py-16">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row items-center justify-center gap-12 max-w-6xl mx-auto">
           <div className="flex-shrink-0">
@@ -12,14 +12,14 @@ export default function TeslaCertificationSection() {
           </div>
 
           <div className="text-center md:text-left">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">EV Charger Installation Experts</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Certified Tesla Installers</h2>
             <p className="text-gray-400 text-lg mb-6">Official Tesla expertise — installed the right way</p>
 
             <div className="flex justify-center md:justify-start">
               <img
                 src="https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/1946a2b2-a6fa-4e79-b11d-99eedaed5100/public"
                 alt="Tesla Certified Installer Badge"
-                className="h-[185px] w-auto"
+                className="h-[154px] w-auto"
               />
             </div>
           </div>

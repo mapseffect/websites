@@ -9,15 +9,10 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Electrician in McKinney, TX | ABR Electric | Licensed",
+  title: "ABR Electric | McKinney Electricians Serving Allen, Frisco & Plano",
   description:
-    "Licensed electricians in McKinney, Allen, Frisco & Plano. 5-star reviews. Tesla certified. Call (214) 690-1941 for a free quote today.",
+    "Licensed & Insured electricians serving McKinney, Allen, Frisco & Plano. 5-star reviews on Google & Yelp. Call (214) 690-1941 for a free quote.",
   generator: "v0.app",
-  icons: {
-    icon: "https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/3cc05301-a411-4b9f-baeb-20b8f9355b00/public",
-    shortcut: "https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/3cc05301-a411-4b9f-baeb-20b8f9355b00/public",
-    apple: "https://imagedelivery.net/Vao_m7ISeT7aNnreYMwd6A/3cc05301-a411-4b9f-baeb-20b8f9355b00/public",
-  },
 }
 
 export default function RootLayout({

@@ -1,6 +1,6 @@
 import Link from "next/link"
 
-export function Footer() {
+export default function Footer() {
   return (
     <footer className="bg-[#0f0f10] py-12">
       <div className="container mx-auto px-4">
@@ -31,23 +31,16 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Updates & Resources */}
+          {/* Column 3: Financing */}
           <div>
-            <h3 className="text-[#22c55e] font-bold mb-4">Updates & Resources</h3>
+            <h3 className="text-[#22c55e] font-bold mb-4">Financing</h3>
             <ul className="space-y-2 text-[#a3a3a3] text-sm">
+              <li>Flexible Payment Options</li>
+              <li>Generator & EV Charger Financing</li>
+              <li>Panel Upgrade Financing</li>
               <li>
-                <Link href="/blog" className="hover:text-[#22c55e] transition-colors">
-                  Updates
-                </Link>
-              </li>
-              <li>
-                <Link href="/resources" className="hover:text-[#22c55e] transition-colors">
-                  Resources
-                </Link>
-              </li>
-              <li>
-                <Link href="/hearth" className="hover:text-[#22c55e] transition-colors">
-                  Financing Options
+                <Link href="/hearth" className="text-[#22c55e] hover:underline">
+                  Learn More
                 </Link>
               </li>
             </ul>
@@ -68,26 +61,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-white/10 mt-8 pt-6">
-          <div className="text-center space-y-3">
-            <p className="text-[#a3a3a3] text-sm">
-              <span className="text-[#22c55e] font-semibold">Tesla Wall Connector Installer</span> — Certified by Tesla
-              for installation of EV charging equipment
-            </p>
-            <p className="text-white text-sm font-semibold">
-              ABR Electric | Licensed Electrician | TECL License #27762
-            </p>
-            <p className="text-[#a3a3a3] text-sm">Serving McKinney, Allen, and Collin County, TX</p>
-          </div>
-        </div>
-
         {/* Copyright Bar */}
-        <div className="border-t border-white/10 mt-6 pt-6">
+        <div className="border-t border-white/10 mt-8 pt-8">
           <p className="text-center text-[#a3a3a3] text-sm">© 2025 ABR Electric. All rights reserved.</p>
         </div>
       </div>
     </footer>
   )
 }
-
-export default Footer

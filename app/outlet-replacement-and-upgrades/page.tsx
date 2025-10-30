@@ -1,95 +1,8 @@
-import type { Metadata } from "next"
 import Header from "@/components/header"
 import Footer from "@/components/footer"
 import Link from "next/link"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
-
-export const metadata: Metadata = {
-  title: "ABR Electric Outlet Replacement & Upgrades Collin County",
-  description:
-    "Expert outlet replacement and upgrades in Collin County. ABR Electric installs GFCI, USB, smart outlets, and tamper-resistant outlets. Professional electrical services in McKinney, Allen, Frisco. Call 214-690-1941 for a free quote.",
-  other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Switch won't turn/disposal on - what's going on?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Common culprits are failed switches, loose terminations, or a miswired disposal switch/loop. We test voltage at the switch, verify the feed, and re-terminate to screw-lugs before replacing the device if needed.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "GFCI trips or won't reset—even after I replaced it",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "This usually points to a downstream fault, a shared neutral, or line/load reversal. We identify the first device in the chain, isolate the load, correct line/load, and fix the true fault—not just the face device.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "3-way/4-way acts weird (works only from one side)",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Likely a traveler miswire or a failed 3-way device. We identify the common, map travelers between boxes, re-terminate properly, and replace any failed switch.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "LED dimmer buzz or flicker",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Often the dimmer isn't LED-rated or the neutral/config is off. We install a compatible dimmer, confirm neutral where required, and tune trim levels.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Lights flicker & crackle after new A/C",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "After an HVAC upgrade, the higher startup current exposes a weak connection, causing lights to flicker and switches to crackle. We shut off the breaker, inspect for heat damage, move conductors from backstab to screw lugs, replace with spec-grade devices, and verify with arc and load tests.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Why does my brand-new GFCI still trip?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Likely a downstream fault, shared neutral, or line/load reversal. We test the whole chain, not just the face device.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "My 3-way switch works only from one side—why?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Usually a miswired traveler or failed 3-way device. We identify the common, map travelers, and correct it.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "What if I hear crackling at a switch?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "That's arcing—cut power at the breaker and call us. We'll find and eliminate the heat source.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can I keep backstabbed connections?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "We strongly recommend moving to screw-lug terminations for longevity and safety. Backstab connections are prone to failure over time.",
-          },
-        },
-      ],
-    }),
-  },
-}
 
 export default function OutletReplacementPage() {
   const outletTypes = [
@@ -280,7 +193,7 @@ export default function OutletReplacementPage() {
                 shared neutrals, arcing, miswired travelers).
               </p>
               <div className="mt-8">
-                <Link href="/contactus">
+                <Link href="/contact">
                   <Button size="lg" className="bg-[#22c55e] hover:bg-[#16a34a] text-black px-8 py-3">
                     Get a Free Quote
                   </Button>

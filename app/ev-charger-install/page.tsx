@@ -1,56 +1,9 @@
 import Header from "@/components/header"
 import Footer from "@/components/footer"
-import ServiceAreasSection from "@/components/service-areas-section"
 import Link from "next/link"
 import { CheckCircle, Zap } from "lucide-react"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import Image from "next/image"
-
-export const metadata = {
-  title: "ABR Electric EV Charger Installation Collin County | Tesla Certified",
-  description:
-    "Professional EV charger installation in Collin County. Tesla-certified electricians for Level 2 charger setup, dedicated circuits, and smart charger configuration. Call (214) 690-1941 for expert EV charging solutions.",
-  other: {
-    "application/ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "FAQPage",
-      mainEntity: [
-        {
-          "@type": "Question",
-          name: "Do I need a permit?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, and ABR Electric takes care of it for you. We manage all city permits, so your install is 100% legal, inspected, and stress-free.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How long does installation take?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Most installs are done in a single visit. Permits can take 2–5 days depending on the city.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "Can you install Tesla / Rivian / Lucid chargers?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Yes, we install all Level 2 EVSE equipment and dedicated circuits — including the ChargePoint HomeFlex Level 2 EV Charger.",
-          },
-        },
-        {
-          "@type": "Question",
-          name: "How much does it cost to install an EV charger in my garage?",
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: "Installation costs typically range from $800-$1,500, but the final price depends on several factors: Depending on the actual distance from the panel and access, cost may vary. Each city has its own permitting costs and inspection requirements that would affect the total cost of the project. We highly recommend following the city's guidelines for electrical permits and inspections. Contact us for a free, detailed quote specific to your installation needs.",
-          },
-        },
-      ],
-    }),
-  },
-}
 
 export default function EVChargerInstallPage() {
   const benefits = [
@@ -80,17 +33,6 @@ export default function EVChargerInstallPage() {
     "Charger mounting and wiring",
     "Testing and commissioning",
     "Smart features setup",
-  ]
-
-  const chargepointSpecs = [
-    { label: "Power Output", value: "Up to 50 amps / 12 kW" },
-    { label: "Charging Speed", value: "Up to 37 miles of range per hour" },
-    { label: "Cable Length", value: "23 feet (7 meters)" },
-    { label: "Connectivity", value: "Wi-Fi enabled with mobile app control" },
-    { label: "Compatibility", value: "All electric vehicles with J1772 connector" },
-    { label: "Installation", value: "Hardwired or plug-in (NEMA 14-50)" },
-    { label: "Smart Features", value: "Scheduling, energy tracking, voice control" },
-    { label: "Warranty", value: "3-year manufacturer warranty" },
   ]
 
   return (
@@ -362,69 +304,6 @@ export default function EVChargerInstallPage() {
           </div>
         </section>
 
-        {/* TECL License and ChargePoint Installation Section */}
-        <section className="py-16 bg-black border-t border-[#22c55e]/20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-6xl mx-auto">
-              {/* TECL License Highlight */}
-              <div className="bg-gradient-to-br from-[#1a2332] to-[#0f1419] border-2 border-[#22c55e] rounded-lg p-8 md:p-12 mb-12">
-                <div className="text-center">
-                  <div className="inline-flex items-center gap-3 bg-[#22c55e]/10 border border-[#22c55e] rounded-full px-6 py-3 mb-6">
-                    <CheckCircle className="w-6 h-6 text-[#22c55e]" />
-                    <span className="text-[#22c55e] text-lg font-bold">Licensed & Insured</span>
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                    Texas Electrical Contractor License
-                  </h2>
-                  <p className="text-5xl md:text-6xl font-bold text-[#22c55e] mb-6">TECL #27762</p>
-                  <p className="text-gray-300 text-lg leading-relaxed max-w-3xl mx-auto">
-                    ABR Electric is a fully licensed Texas electrical contractor, ensuring your EV charger installation
-                    meets all state and local electrical codes, safety standards, and permit requirements.
-                  </p>
-                </div>
-              </div>
-
-              {/* ChargePoint Installation Section */}
-              <div className="bg-[#1a2332] border border-[#22c55e]/20 rounded-lg p-8 md:p-12">
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-6 text-center">
-                  We Install ChargePoint Home Flex Chargers
-                </h2>
-                <p className="text-gray-300 text-lg leading-relaxed mb-8 text-center max-w-3xl mx-auto">
-                  ABR Electric specializes in professional installation of ChargePoint Home Flex Level 2 EV charging
-                  stations. Our licensed electricians ensure proper setup, dedicated circuit installation, and full
-                  compliance with electrical codes.
-                </p>
-
-                {/* ChargePoint Specifications */}
-                <div className="grid md:grid-cols-2 gap-6">
-                  {chargepointSpecs.map((spec, index) => (
-                    <div
-                      key={index}
-                      className="flex items-start gap-4 bg-black/50 border border-[#22c55e]/10 p-6 rounded-lg"
-                    >
-                      <CheckCircle className="w-6 h-6 text-[#22c55e] flex-shrink-0 mt-1" />
-                      <div>
-                        <h3 className="text-white font-semibold mb-1">{spec.label}</h3>
-                        <p className="text-gray-400">{spec.value}</p>
-                      </div>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 text-center">
-                  <p className="text-gray-400 mb-4">Professional installation by TECL #27762 licensed electricians</p>
-                  <Link
-                    href="/#quote-form"
-                    className="bg-[#22c55e] text-black px-8 py-4 rounded-lg font-semibold hover:bg-[#16a34a] transition-colors inline-flex items-center gap-2"
-                  >
-                    Get Installation Quote
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-br from-[#1a0a0a] via-black to-[#0a1a0a]">
           <div className="container mx-auto px-4">
@@ -444,9 +323,6 @@ export default function EVChargerInstallPage() {
             </div>
           </div>
         </section>
-
-        {/* Service Areas Section */}
-        <ServiceAreasSection />
       </main>
       <Footer />
     </>

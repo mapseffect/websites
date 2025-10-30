@@ -8,64 +8,46 @@ export default function LocationServicesSection({ city }: LocationServicesSectio
   const services = [
     {
       icon: "⚡",
-      title: "EV Charging",
-      description: "Fast, future-ready Tesla and ChargePoint EV charger installations for your home or garage.",
+      title: "EV Charging Installation",
+      description: `Professional Tesla and universal EV charger installation for ${city} homes.`,
       href: "/ev-charger-install",
     },
     {
-      icon: "🔌",
-      title: "Outlets & Switches",
-      description: "Modern, safe Leviton and Lutron outlet and switch upgrades and replacements.",
-      href: "/outlet-replacement-and-upgrades",
-    },
-    {
       icon: "📦",
-      title: "Electrical Panel",
-      description: "Upgrade your Square D or Eaton panel to handle today's electrical demands.",
+      title: "Electrical Panel Upgrades",
+      description: `Upgrade your ${city} home's electrical panel to handle modern power demands.`,
       href: "/breaker-box-panel-upgrades",
-    },
-    {
-      icon: "🌳",
-      title: "Landscape Lighting",
-      description: "Low-voltage Kichler or FX Luminaire outdoor lighting to boost curb appeal and safety.",
-      href: "/outdoorlighting",
     },
     {
       icon: "🔋",
       title: "Generator Installation",
-      description: "Whole-home Generac or Kohler backup generators for reliable power protection.",
+      description: `Authorized Generac dealer providing backup power solutions in ${city}.`,
       href: "/generators",
     },
     {
-      icon: "🎯",
-      title: "Dedicated Circuits",
-      description: "Power heavy appliances with dedicated Eaton or Siemens wiring and breakers.",
-      href: "/dedicated-circuit-installation",
+      icon: "🔌",
+      title: "Outlets & Switches",
+      description: `Modern outlet and switch upgrades for ${city} homes and businesses.`,
+      href: "/outlet-replacement-and-upgrades",
     },
     {
-      icon: "💧",
-      title: "Surge Protection",
-      description: "Protect your entire home from electrical surges and spikes with Eaton or APC whole-house systems.",
-      href: "/whole-house-surge-protection",
+      icon: "🌳",
+      title: "Landscape Lighting",
+      description: `Transform your ${city} property with professional outdoor lighting.`,
+      href: "/outdoorlighting",
     },
     {
       icon: "💡",
       title: "Lighting & Fixtures",
-      description: "Install modern Kichler or Philips Hue fixtures for recessed, pendant, or statement lighting.",
+      description: `Expert lighting fixture installation and design for ${city} residents.`,
       href: "/lighting-fixture-installation",
-    },
-    {
-      icon: "🔥",
-      title: "Smoke Detectors",
-      description: "Keep your family safe with up-to-code Kidde or First Alert smoke detector installs.",
-      href: "/smoke-detector-installation",
     },
   ]
 
   return (
     <section className="py-16 bg-black">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">Electrical Services We Offer</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-4">Electrical Services in {city}</h2>
         <p className="text-gray-300 text-center mb-12 max-w-2xl mx-auto">
           From panel upgrades to EV chargers, we provide comprehensive electrical services to {city} homeowners and
           businesses.

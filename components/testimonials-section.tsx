@@ -34,35 +34,6 @@ const testimonials = [
     author: "Hayden Black",
     platform: "Google Review",
   },
-  {
-    text: "Love all of their service techs. Show up on time. Great communication. They offer different options for any particular job. Very courteous and friendly. Very knowledgeable.",
-    author: "Joseph Cash",
-    platform: "Google Review",
-    services: [
-      "Remodeling",
-      "Light fixture installation",
-      "Light fixture repair",
-      "Electrical outlet & switch relocation",
-      "Electrical outlet & switch repair",
-      "Electrical wiring repair",
-      "Electrical outlet & switch installation",
-    ],
-  },
-  {
-    text: "I just had a great homeowners electrical workshop with James. Good combination of theoretical and practical exercises. Learned a lot of small, but valuable details about wiring and outlets/switches installation.",
-    author: "Alex Kim",
-    platform: "Google Review",
-  },
-  {
-    text: "Got a text from Jason on the day of the appointment, said he would be an hour early and that worked great. He showed up exactly when he said, was very professional, extremely transparent; showed me everything he was doing and explained it well. Even with that extra time he was all done in 30 minutes with everything working again. ABR will be my go to for electrical needs now. Thanks!",
-    author: "David U.",
-    platform: "Yelp Review",
-  },
-  {
-    text: "James came out with a team member (I believe Jerome was his name) and they quickly tackled the problems that were found during the home inspection with the main electrical panels. He also tested the generator to make sure it kicked on fine when there was no power at the main as well as pointed out some other things to look out for. They arrived on time, went to work, finished quickly and the final invoice was in line with the original estimate. Would recommend!",
-    author: "Shez V.",
-    platform: "Yelp Review",
-  },
 ]
 
 export default function TestimonialsSection() {
@@ -93,8 +64,7 @@ export default function TestimonialsSection() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-2">Licensed Electrician Reviews</h2>
-        <p className="text-gray-300 text-center mb-12 text-lg">What ABR Electric Customers Say</p>
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">What Our Customers Say</h2>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
           {testimonials.map((testimonial, index) => (
@@ -109,19 +79,6 @@ export default function TestimonialsSection() {
               </div>
 
               <p className="text-gray-300 mb-4 leading-relaxed text-sm">&ldquo;{testimonial.text}&rdquo;</p>
-
-              {testimonial.services && (
-                <div className="mb-4">
-                  <p className="text-[#22c55e] text-xs font-semibold mb-2">Services:</p>
-                  <div className="flex flex-wrap gap-1">
-                    {testimonial.services.map((service, idx) => (
-                      <span key={idx} className="text-gray-400 text-xs bg-white/5 px-2 py-1 rounded">
-                        {service}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              )}
 
               <div className="flex items-center justify-between">
                 <div>
