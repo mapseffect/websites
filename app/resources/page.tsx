@@ -1,88 +1,315 @@
-import Header from "@/components/header"
-import Footer from "@/components/footer"
 import Link from "next/link"
-import { ExternalLink } from "lucide-react"
+import {
+  Snowflake,
+  Wrench,
+  Home,
+  Sprout,
+  Bug,
+  Sparkles,
+  Hammer,
+  PaintBucket,
+  Layers,
+  Warehouse,
+  HardHat,
+  Shield,
+  PenTool as Tool,
+  AlertCircle,
+  Key,
+  DoorOpen,
+  Truck,
+} from "lucide-react"
 
 export default function ResourcesPage() {
-  const resources = [
+  const serviceCategories = [
     {
+      icon: Snowflake,
+      title: "HVAC Services",
+      description: "Heating, ventilation, and air conditioning installation, repair, and maintenance.",
+      links: [
+        { text: "All HVAC Companies", href: "#" },
+        { text: "HVAC Maintenance Tips", href: "#" },
+      ],
+    },
+    {
+      icon: Wrench,
+      title: "Plumbing Services",
+      description: "Professional plumbing for repairs, installations, drain cleaning, and water heater repairs.",
+      links: [
+        { text: "Find Plumbers", href: "#" },
+        { text: "Plumbing & Repair Services", href: "#" },
+      ],
+    },
+    {
+      icon: Home,
       title: "Roofing Services",
-      description: "Professional roofing services for residential and commercial properties.",
-      url: "https://caroofing.ca/",
+      description: "Roofing installation, repair, and maintenance services.",
+      links: [
+        { text: "Roofing Services", href: "https://caroofing.ca/" },
+        { text: "CA Roofing Consultants", href: "#" },
+        { text: "Unlimited Roof Refurbishing", href: "#" },
+      ],
+    },
+    {
+      icon: Sprout,
+      title: "Landscaping & Lawn Care",
+      description: "Professional landscaping, lawn maintenance, and outdoor design services.",
+      links: [
+        { text: "All Landscapers", href: "#" },
+        { text: "Lawn Care Services", href: "#" },
+      ],
+    },
+    {
+      icon: Bug,
+      title: "Pest Control",
+      description: "Pest prevention, extermination, and inspection services for homes and businesses.",
+      links: [
+        { text: "City Pest Control", href: "#" },
+        { text: "Insect Inspection Services", href: "#" },
+      ],
+    },
+    {
+      icon: Sparkles,
+      title: "Cleaning Services",
+      description: "Professional house cleaning services, window cleaning, and carpet cleaning services.",
+      links: [
+        { text: "Find Cleaners", href: "#" },
+        { text: "Cleaning & Services", href: "#" },
+      ],
+    },
+    {
+      icon: Hammer,
+      title: "Handyman Services",
+      description: "General repairs, maintenance, and home improvement services.",
+      links: [
+        { text: "Local Handyman", href: "#" },
+        { text: "Home Repair Services", href: "#" },
+      ],
+    },
+    {
+      icon: PaintBucket,
+      title: "Painting Services",
+      description: "Interior and exterior painting, staining, and finishing services.",
+      links: [
+        { text: "CA Painters", href: "#" },
+        { text: "Interior Painting Services", href: "#" },
+      ],
+    },
+    {
+      icon: Layers,
+      title: "Flooring Services",
+      description: "Flooring installation, refinishing, repair, tile, hardwood, laminate, and carpet services.",
+      links: [
+        { text: "CA Flooring Consultants", href: "#" },
+        { text: "Hardwood Floor Refurbishing", href: "#" },
+      ],
+    },
+    {
+      icon: Warehouse,
+      title: "Garage Door Services",
+      description: "Garage door installation, repair, and maintenance services.",
+      links: [
+        { text: "Ranger Garage Door", href: "https://rangergaragedoor.com/" },
+        { text: "Burges Garage Door Repair – Downey, TX", href: "#" },
+        { text: "Garage Door Repairs", href: "#" },
+      ],
+    },
+    {
+      icon: HardHat,
+      title: "Remodeling & Renovation",
+      description: "Complete home remodeling, kitchen, bathroom, and basement renovation services.",
+      links: [
+        { text: "Latop Renovation", href: "https://latoprenovation.com/" },
+        { text: "LA Bay Renovation – Los Angeles, CA", href: "#" },
+        { text: "Kitchen Remodeling Services", href: "#" },
+      ],
+    },
+    {
+      icon: Shield,
+      title: "Security Systems",
+      description: "Home security system installation, monitoring, and smart home integration.",
+      links: [
+        { text: "Find Security Companies", href: "#" },
+        { text: "Smart Home Services", href: "#" },
+      ],
+    },
+    {
+      icon: Tool,
+      title: "Roof Services",
+      description: "Roof maintenance, repair, cleaning, and installation services.",
+      links: [
+        { text: "Roof Services", href: "#" },
+        { text: "Roof Maintenance Services", href: "#" },
+      ],
+    },
+    {
+      icon: AlertCircle,
+      title: "Appliance Repair",
+      description: "Repair services for refrigerators, washers, dryers, and other appliances.",
+      links: [
+        { text: "Appliance Repair", href: "#" },
+        { text: "Refrigerator Repair Services", href: "#" },
+      ],
+    },
+    {
+      icon: Key,
+      title: "Locksmith Services",
+      description: "Emergency locksmith, rekeying, and keyless services.",
+      links: [
+        { text: "Find Locksmiths", href: "#" },
+        { text: "Locksmith Services", href: "#" },
+      ],
+    },
+    {
+      icon: DoorOpen,
+      title: "Window & Door Services",
+      description: "Window and door installation, repair, and replacement services.",
+      links: [
+        { text: "All Window Companies", href: "#" },
+        { text: "Door Installation Services", href: "#" },
+      ],
+    },
+    {
+      icon: Truck,
+      title: "RV Repair Services",
+      description: "Comprehensive RV repair, maintenance, tire, and design services.",
+      links: [
+        { text: "Wrap4Car", href: "https://wrap4car.com/" },
+        { text: "ServiCar - Mobile Shop Specialists", href: "#" },
+        { text: "Camper Design Services", href: "#" },
+      ],
     },
   ]
 
   return (
-    <>
-      <Header />
-      <main className="pt-20">
-        {/* Hero Section */}
-        <section className="relative bg-gradient-to-br from-black via-[#1a0a0a] to-[#2d0a0a] py-20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">Helpful Resources</h1>
-              <p className="text-xl text-gray-300 mb-8 leading-relaxed">
-                Trusted partners and resources for your home improvement needs.
-              </p>
-            </div>
+    <div className="min-h-screen bg-[#0a1628]">
+      {/* Hero Section */}
+      <section className="px-4 py-16 text-center">
+        <div className="mx-auto max-w-4xl">
+          <h1 className="mb-4 text-3xl font-bold text-white md:text-4xl">Home Service Resources</h1>
+          <p className="mb-8 text-lg text-gray-300">
+            A directory of home service categories for homeowners. Browse various service types to find information
+            about HVAC, plumbing, roofing, and other home services.
+          </p>
+          <div className="flex flex-wrap justify-center gap-4">
+            <Link
+              href="#categories"
+              className="rounded-md bg-emerald-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-emerald-700"
+            >
+              Connect with Experts
+            </Link>
+            <Link
+              href="/"
+              className="rounded-md border border-gray-600 px-6 py-3 font-semibold text-white transition-colors hover:bg-gray-800"
+            >
+              See Electrical Services
+            </Link>
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* Resources Grid */}
-        <section className="py-16 bg-black">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-              {resources.map((resource, index) => (
-                <a
+      {/* Service Categories */}
+      <section id="categories" className="px-4 py-16">
+        <div className="mx-auto max-w-7xl">
+          <div className="mb-12 text-center">
+            <h2 className="mb-4 text-3xl font-bold text-white">Home Service Categories</h2>
+            <p className="text-gray-300">
+              Discover home service categories to find information about different types of services available for your
+              home.
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {serviceCategories.map((category, index) => {
+              const Icon = category.icon
+              return (
+                <div
                   key={index}
-                  href={resource.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#1a2332] rounded-lg p-6 hover:bg-[#1f2937] transition-all duration-300 border border-transparent hover:border-[#22c55e]/30 group"
+                  className="rounded-lg border border-gray-700 bg-[#0f1f3a] p-6 transition-all hover:border-emerald-600"
                 >
-                  <div className="flex items-start justify-between gap-4">
-                    <div className="flex-1">
-                      <h3 className="text-[#22c55e] font-semibold text-lg mb-2 group-hover:text-[#16a34a] transition-colors">
-                        {resource.title}
-                      </h3>
-                      <p className="text-gray-300 text-sm leading-relaxed mb-3">{resource.description}</p>
-                      <span className="text-gray-400 text-xs break-all">{resource.url}</span>
+                  <div className="mb-4 flex items-start gap-4">
+                    <div className="rounded-lg bg-emerald-600/10 p-3">
+                      <Icon className="h-6 w-6 text-emerald-500" />
                     </div>
-                    <ExternalLink className="w-5 h-5 text-gray-400 group-hover:text-[#22c55e] transition-colors flex-shrink-0" />
+                    <div className="flex-1">
+                      <h3 className="mb-2 text-xl font-bold text-white">{category.title}</h3>
+                      <p className="text-sm text-gray-400">{category.description}</p>
+                    </div>
                   </div>
-                </a>
-              ))}
-            </div>
+                  <ul className="space-y-2">
+                    {category.links.map((link, linkIndex) => (
+                      <li key={linkIndex} className="flex items-start gap-2">
+                        <span className="mt-1 text-emerald-500">→</span>
+                        <Link
+                          href={link.href}
+                          className="text-sm text-emerald-400 hover:text-emerald-300 hover:underline"
+                          {...(link.href.startsWith("http") ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+                        >
+                          {link.text}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )
+            })}
           </div>
-        </section>
+        </div>
+      </section>
 
-        {/* CTA Section */}
-        <section className="py-16 bg-gradient-to-br from-[#1a0a0a] via-black to-[#0a1a0a]">
-          <div className="container mx-auto px-4">
-            <div className="max-w-3xl mx-auto text-center">
-              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">Need Electrical Services?</h2>
-              <p className="text-xl text-gray-300 mb-8">
-                Contact ABR Electric today for professional electrical services in McKinney and surrounding areas.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link
-                  href="/contact"
-                  className="bg-[#22c55e] text-black px-8 py-4 rounded-lg font-semibold hover:bg-[#16a34a] transition-colors"
-                >
-                  Get Free Quote
-                </Link>
-                <a
-                  href="tel:+12146901941"
-                  className="border-2 border-[#22c55e] text-[#22c55e] px-8 py-4 rounded-lg font-semibold hover:bg-[#22c55e] hover:text-black transition-colors"
-                >
-                  Call: (214) 690-1941
-                </a>
+      {/* About Section */}
+      <section className="border-t border-gray-800 px-4 py-16">
+        <div className="mx-auto max-w-7xl">
+          <h2 className="mb-12 text-center text-3xl font-bold text-white">About This Directory</h2>
+          <div className="grid gap-8 md:grid-cols-3">
+            <div className="text-center">
+              <div className="mb-4 flex justify-center">
+                <div className="rounded-lg bg-emerald-600/10 p-4">
+                  <Layers className="h-8 w-8 text-emerald-500" />
+                </div>
               </div>
+              <h3 className="mb-3 text-xl font-bold text-white">Service Categories</h3>
+              <p className="text-gray-400">
+                This directory lists common home service categories that homeowners may need for maintenance and
+                repairs.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="mb-4 flex justify-center">
+                <div className="rounded-lg bg-emerald-600/10 p-4">
+                  <AlertCircle className="h-8 w-8 text-emerald-500" />
+                </div>
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-white">Homeowner Resource</h3>
+              <p className="text-gray-400">
+                Information organized to help homeowners find and understand different types of home services.
+              </p>
+            </div>
+            <div className="text-center">
+              <div className="mb-4 flex justify-center">
+                <div className="rounded-lg bg-emerald-600/10 p-4">
+                  <Shield className="h-8 w-8 text-emerald-500" />
+                </div>
+              </div>
+              <h3 className="mb-3 text-xl font-bold text-white">Service Information</h3>
+              <p className="text-gray-400">
+                Browse categories to learn about different types of home services and maintenance options.
+              </p>
             </div>
           </div>
-        </section>
-      </main>
-      <Footer />
-    </>
+        </div>
+      </section>
+
+      {/* Footer CTA */}
+      <section className="border-t border-gray-800 px-4 py-12 text-center">
+        <h2 className="mb-4 text-2xl font-bold text-white">Need Electrical Services?</h2>
+        <p className="mb-6 text-gray-300">ABR Electric provides professional electrical services for your home.</p>
+        <Link
+          href="/"
+          className="inline-block rounded-md bg-emerald-600 px-8 py-3 font-semibold text-white transition-colors hover:bg-emerald-700"
+        >
+          Visit ABR Electric
+        </Link>
+      </section>
+    </div>
   )
 }
